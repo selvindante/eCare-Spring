@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/spring-datasource.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <welcome-file-list>
+        <welcome-file>/login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registrationServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.RegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationServlet</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>dashboardServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dashboardServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>clientServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.ClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>clientServlet</servlet-name>
+        <url-pattern>/client</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>contractServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.ContractServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>contractServlet</servlet-name>
+        <url-pattern>/contract</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>contractCreationServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.ContractCreationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>contractCreationServlet</servlet-name>
+        <url-pattern>/createContract</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tariffsListServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.TariffsListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tariffsListServlet</servlet-name>
+        <url-pattern>/tariffsList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tariffServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.TariffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tariffServlet</servlet-name>
+        <url-pattern>/tariff</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>optionServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.OptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>optionServlet</servlet-name>
+        <url-pattern>/option</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>chooseTariffServlet</servlet-name>
+        <servlet-class>ru.tsystems.tsproject.ecare.servlets.ChooseTariffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>chooseTariffServlet</servlet-name>
+        <url-pattern>/chooseTariff</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>authFilter</filter-name>
+        <filter-class>ru.tsystems.tsproject.ecare.servlets.AuthorizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
