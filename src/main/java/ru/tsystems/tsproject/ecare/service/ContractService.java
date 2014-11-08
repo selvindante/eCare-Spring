@@ -3,6 +3,7 @@ package ru.tsystems.tsproject.ecare.service;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.dao.ContractDao;
 import ru.tsystems.tsproject.ecare.entities.Client;
@@ -28,7 +29,6 @@ public class ContractService implements IContractService {
     private ContractDao cnDao;
 
     /*Client service instance for some methods of working with client amount in contract service*/
-    //TODO app context is necessary for it???
     private final IClientService clientService;
 
     /*Logger for contract service operations*/
@@ -39,9 +39,6 @@ public class ContractService implements IContractService {
     public ContractService(ContractDao cnDAO, IClientService clientService) {
         this.cnDao = cnDAO;
         this.clientService = clientService;
-
-        /*ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
-        this.clientService = (IClientService)context.getBean("clientService");*/
     }
 
     /**
@@ -53,6 +50,7 @@ public class ContractService implements IContractService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Contract saveOrUpdateContract(Contract cn) throws ECareException {
         logger.info("Save/update contract " + cn + " in DB.");
         Contract contract = cnDao.saveOrUpdate(cn);
@@ -76,6 +74,7 @@ public class ContractService implements IContractService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Contract loadContract(long id) throws ECareException {
         logger.info("Load contract with id: " + id + " from DB.");
         Contract cn = cnDao.load(id);
@@ -100,6 +99,7 @@ public class ContractService implements IContractService {
      * in the database.
      */
     @Override
+    @Transactional
     public Contract findContractByNumber(long number) throws ECareException {
         logger.info("Find contract by telephone number: " + number + " in DB.");
         Contract cn = null;
@@ -125,6 +125,7 @@ public class ContractService implements IContractService {
      * of entity and DAO returns null.
      */
     @Override
+    @Transactional
     public void deleteContract(long id) throws ECareException {
         logger.info("Delete contract with id: " + id + " from DB.");
         Contract cn = cnDao.load(id);
@@ -147,6 +148,7 @@ public class ContractService implements IContractService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public List<Contract> getAllContracts() throws ECareException {
         logger.info("Get all contracts from DB.");
         List<Contract> contracts = cnDao.getAll();
@@ -170,6 +172,7 @@ public class ContractService implements IContractService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public List<Contract> getAllContractsForClient(long id) throws ECareException {
         logger.info("Get all contracts from DB for client with id: " + id + ".");
         List<Contract> contracts = cnDao.getAllContractsForClient(id);
@@ -200,6 +203,7 @@ public class ContractService implements IContractService {
      * @param id client id for deleting of all contracts for this client
      */
     @Override
+    @Transactional
     public void deleteAllContractsForClient(long id) {
         logger.info("Delete all contracts from DB for client with id: " + id + ".");
         cnDao.deleteAllContractsForClient(id);
@@ -212,6 +216,7 @@ public class ContractService implements IContractService {
      * @return number of contracts in the database.
      */
     @Override
+    @Transactional
     public long getNumberOfContracts() {
         logger.info("Get number of contracts in DB.");
         long number = cnDao.size();

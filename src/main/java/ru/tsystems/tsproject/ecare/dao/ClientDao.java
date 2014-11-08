@@ -1,8 +1,6 @@
 package ru.tsystems.tsproject.ecare.dao;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.entities.Client;
 
 import javax.persistence.EntityManager;
@@ -15,15 +13,10 @@ import java.util.List;
  * on 02.10.2014.
  */
 @Repository("clientDao")
-@Transactional(propagation = Propagation.REQUIRED)
 public class ClientDao extends AbstractDAO<Client> {
 
     @PersistenceContext
     private EntityManager em;
-
-    public void setEntityManager(EntityManager em) {
-        this.em = em;
-    }
 
     @Override
     public Client doSaveOrUpdate(Client cl) {

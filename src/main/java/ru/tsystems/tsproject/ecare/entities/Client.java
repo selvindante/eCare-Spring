@@ -195,23 +195,23 @@ public class Client implements Comparable<Client>{
 
         Client client = (Client) o;
 
-        if (passport != client.passport) return false;
+        if (!passport.equals(client.passport)) return false;
         if (address != null ? !address.equals(client.address) : client.address != null) return false;
         if (!email.equals(client.email)) return false;
         if (lastname != null ? !lastname.equals(client.lastname) : client.lastname != null) return false;
         if (name != null ? !name.equals(client.name) : client.name != null) return false;
-        if (!password.equals(client.password)) return false;
+        return password.equals(client.password);
 
-        return true;
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
+        int result = name.hashCode();
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + (int) (passport ^ (passport >>> 32));
+        result = 31 * result + (passport != null ? passport.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + email.hashCode();
+        result = 31 * result + password.hashCode();
         return result;
     }
 

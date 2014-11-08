@@ -37,13 +37,6 @@ public interface IOptionService {
     public void deleteOption(long id);
 
     /**
-     * This method provides receiving of all options from the storage.
-     *
-     * @return list of received options.
-     */
-    public List<Option> getAllOptions();
-
-    /**
      * This method provides receiving of all options for tariff from the storage.
      *
      * @param id contract id for searching of all options for this contract.

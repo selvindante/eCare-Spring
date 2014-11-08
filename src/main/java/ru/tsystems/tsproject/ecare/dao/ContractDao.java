@@ -1,8 +1,6 @@
 package ru.tsystems.tsproject.ecare.dao;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.entities.Contract;
 
 import javax.persistence.EntityManager;
@@ -15,7 +13,6 @@ import java.util.List;
  * on 06.10.2014.
  */
 @Repository("contractDao")
-@Transactional(propagation = Propagation.REQUIRED)
 public class ContractDao extends AbstractDAO<Contract> {
 
     @PersistenceContext
@@ -31,7 +28,6 @@ public class ContractDao extends AbstractDAO<Contract> {
         return em.find(Contract.class, id);
     }
 
-    @SuppressWarnings("unchecked")
     public Contract findContractByNumber(long number) {
         Query query = em.createNamedQuery("Contract.findContractByNumber", Contract.class);
         query.setParameter("number", number);
@@ -44,12 +40,10 @@ public class ContractDao extends AbstractDAO<Contract> {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public List<Contract> doGetAll() {
         return em.createNamedQuery("Contract.getAllContracts", Contract.class).getResultList();
     }
 
-    @SuppressWarnings("unchecked")
     public List<Contract> getAllContractsForClient(long id) {
         Query query = em.createNamedQuery("Contract.getAllContractsForClient", Contract.class);
         query.setParameter("id", id);
@@ -57,12 +51,10 @@ public class ContractDao extends AbstractDAO<Contract> {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void doDeleteAll() {
         em.createNamedQuery("Contract.deleteAllContracts").executeUpdate();
     }
 
-    @SuppressWarnings("unchecked")
     public void deleteAllContractsForClient(long id) {
         Query query = em.createNamedQuery("Contract.deleteAllContractsForClient");
         query.setParameter(1, id);
@@ -70,7 +62,6 @@ public class ContractDao extends AbstractDAO<Contract> {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public long doSize() {
         return ((Number)em.createNamedQuery("Contract.size").getSingleResult()).longValue();
     }

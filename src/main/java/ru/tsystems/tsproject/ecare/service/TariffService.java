@@ -3,6 +3,7 @@ package ru.tsystems.tsproject.ecare.service;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.dao.TariffDao;
 import ru.tsystems.tsproject.ecare.entities.Tariff;
@@ -40,6 +41,7 @@ public class TariffService implements ITariffService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Tariff saveOrUpdateTariff(Tariff tr) throws ECareException {
         logger.info("Save/update tariff " + tr + " in DB.");
         Tariff tariff = trDao.saveOrUpdate(tr);
@@ -63,6 +65,7 @@ public class TariffService implements ITariffService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Tariff loadTariff(long id) throws ECareException {
         logger.info("Load tariff with id: " + id + " from DB.");
         Tariff tr = trDao.load(id);
@@ -85,6 +88,7 @@ public class TariffService implements ITariffService {
      * of entity and DAO returns null.
      */
     @Override
+    @Transactional
     public void deleteTariff(long id) throws ECareException {
         logger.info("Delete tariff with id: " + id + " from DB.");
         Tariff tr = trDao.load(id);
@@ -105,6 +109,7 @@ public class TariffService implements ITariffService {
      * @return list of received tariffs.
      */
     @Override
+    @Transactional
     public List<Tariff> getAllTariffs() {
         logger.info("Get all tariffs from DB.");
         List<Tariff> tariffs = trDao.getAll();
@@ -123,6 +128,7 @@ public class TariffService implements ITariffService {
      * This method implements deleting of all tariffs from the database.
      */
     @Override
+    @Transactional
     public void deleteAllTariffs() {
         logger.info("Delete all tariffs from DB.");
         trDao.deleteAll();
@@ -135,6 +141,7 @@ public class TariffService implements ITariffService {
      * @return number of tariffs in the storage.
      */
     @Override
+    @Transactional
     public long getNumberOfTariffs() {
         logger.info("Get number of tariffs in DB.");
         long number = trDao.size();

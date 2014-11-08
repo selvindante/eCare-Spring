@@ -3,6 +3,7 @@ package ru.tsystems.tsproject.ecare.service;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.dao.OptionDao;
 import ru.tsystems.tsproject.ecare.entities.Option;
@@ -43,6 +44,7 @@ public class OptionService implements IOptionService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Option saveOrUpdateOption(Option op) throws ECareException {
         logger.info("Save/update option " + op + " in DB.");
         Option option = opDao.saveOrUpdate(op);
@@ -66,6 +68,7 @@ public class OptionService implements IOptionService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Option loadOption(long id) throws ECareException {
         logger.info("Load option with id: " + id + " from DB.");
         Option op = opDao.load(id);
@@ -88,6 +91,7 @@ public class OptionService implements IOptionService {
      * of entity and DAO returns null.
      */
     @Override
+    @Transactional
     public void deleteOption(long id) throws ECareException {
         logger.info("Delete option with id: " + id + " from DB.");
         Option op = opDao.load(id);
@@ -103,28 +107,6 @@ public class OptionService implements IOptionService {
     }
 
     /**
-     * This method implements receiving of all options from the database.
-     *
-     * @return list of received options.
-     * @throws ECareException if an error occurred during receiving of entities
-     * and DAO returns null.
-     */
-    @Override
-    public List<Option> getAllOptions() throws ECareException {
-        logger.info("Get all options from DB.");
-        List<Option> options = opDao.getAll();
-        //If DAO returns null method will throws an ECareException
-        if (options == null) {
-            ECareException ecx = new ECareException("Failed to get all options from DB.");
-            logger.error(ecx.getMessage(), ecx);
-            throw ecx;
-        }
-        logger.info("All options obtained from DB.");
-        // Else method returns list of option entities
-        return options;
-    }
-
-    /**
      * This method implements receiving of all options for tariff from the database.
      *
      * @param id contract id for searching of all options for this contract.
@@ -133,6 +115,7 @@ public class OptionService implements IOptionService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public List<Option> getAllOptionsForTariff(long id) throws ECareException{
         logger.info("Get all options from DB for tariff with id: " + id + ".");
         List<Option> options = opDao.getAllOptionsForTariff(id);
@@ -153,6 +136,7 @@ public class OptionService implements IOptionService {
      * @param id tariff id for deleting of all options for this tariff.
      */
     @Override
+    @Transactional
     public void deleteAllOptionsForTariff(long id) {
         logger.info("Delete all options from DB for tariff with id: " + id + ".");
         opDao.deleteAllOptionsForTariff(id);
@@ -165,6 +149,7 @@ public class OptionService implements IOptionService {
      * @return number of options in the storage.
      */
     @Override
+    @Transactional
     public long getNumberOfOptions() {
         logger.info("Get number of options in DB.");
         long number = opDao.size();
@@ -182,6 +167,7 @@ public class OptionService implements IOptionService {
      * @throws ECareException if this options already incompatible.
      */
     @Override
+    @Transactional
     public Option setDependentOption(Option currentOption, Option dependentOption) throws ECareException {
         logger.info("Set dependency of option id: " + currentOption.getId() + " with option id: " + dependentOption.getId() + ".");
         // If current option not incompatible for chosen option.
@@ -211,6 +197,7 @@ public class OptionService implements IOptionService {
      * @throws ECareException if current option not contains such dependence.
      */
     @Override
+    @Transactional
     public Option deleteDependentOption(Option currentOption, Option dependentOption) throws ECareException {
         logger.info("Remove dependency of option id: " + currentOption.getId() + " with option id: " + dependentOption.getId() + ".");
         // If current option linked with chosen option by dependency.
@@ -233,6 +220,7 @@ public class OptionService implements IOptionService {
      * @param currentOption current option entity.
      */
     @Override
+    @Transactional
     public void clearDependentOptions(Option currentOption) {
         logger.info("Remove all dependent options from option id: " + currentOption.getId() + ".");
         Set<Option> options = currentOption.getDependentOptions();
@@ -244,11 +232,6 @@ public class OptionService implements IOptionService {
             deleteDependentOption(o, currentOption);
             saveOrUpdateOption(o);
         }
-        /*for (Option o: currentOption.getDependentOptions()) {
-            // For every dependent option for current option: remove dependency.
-                deleteDependentOption(o, currentOption);
-                saveOrUpdateOption(o);
-            }*/
         // Remove all dependent options for current option.
         currentOption.getDependentOptions().clear();
         logger.info("All dependent options removed from option id: " + currentOption.getId() + ".");
@@ -264,6 +247,7 @@ public class OptionService implements IOptionService {
      * @throws ECareException if this options already dependent.
      */
     @Override
+    @Transactional
     public Option setIncompatibleOption(Option currentOption, Option incompatibleOption) throws ECareException {
         logger.info("Set incompatibility of option id: " + currentOption.getId() + " with option id: " + incompatibleOption.getId() + ".");
         // If current option not dependent for chosen option.
@@ -293,6 +277,7 @@ public class OptionService implements IOptionService {
      * @throws ECareException if current option not contains such incompatibility.
      */
     @Override
+    @Transactional
     public Option deleteIncompatibleOption(Option currentOption, Option incompatibleOption) throws ECareException {
         logger.info("Remove incompatibility of option id: " + currentOption.getId() + " with option id: " + incompatibleOption.getId() + ".");
         // If current option linked with chosen option by incompatibility.
@@ -315,6 +300,7 @@ public class OptionService implements IOptionService {
      * @param currentOption current option entity.
      */
     @Override
+    @Transactional
     public void clearIncompatibleOptions(Option currentOption) {
         logger.info("Remove all incompatible options from option id: " + currentOption.getId() + ".");
         Set<Option> options = currentOption.getIncompatibleOptions();
@@ -326,11 +312,6 @@ public class OptionService implements IOptionService {
             deleteIncompatibleOption(o, currentOption);
             saveOrUpdateOption(o);
         }
-        /*for (Option o: currentOption.getIncompatibleOptions()) {
-            // For every incompatible option for current option: remove incompatibility.
-            deleteIncompatibleOption(o, currentOption);
-            saveOrUpdateOption(o);
-        }*/
         // Remove all incompatible options for current option.
         currentOption.getIncompatibleOptions().clear();
         logger.info("All incompatible options removed from option id: " + currentOption.getId() + ".");

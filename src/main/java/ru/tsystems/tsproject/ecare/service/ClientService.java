@@ -3,6 +3,7 @@ package ru.tsystems.tsproject.ecare.service;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.dao.ClientDao;
 import ru.tsystems.tsproject.ecare.entities.Client;
@@ -41,6 +42,7 @@ public class ClientService implements IClientService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Client saveOrUpdateClient(Client cl) throws ECareException {
         logger.info("Save/update client " + cl + " in DB.");
         Client client = clDao.saveOrUpdate(cl);
@@ -64,6 +66,7 @@ public class ClientService implements IClientService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public Client loadClient(long id) throws ECareException {
         logger.info("Load client with id: " + id + " from DB.");
         Client cl = clDao.load(id);
@@ -89,6 +92,7 @@ public class ClientService implements IClientService {
      * in the database.
      */
     @Override
+    @Transactional
     public Client findClient(String login, String password) throws ECareException {
         logger.info("Find client with login: " + login + " and password:" + password + " in DB.");
         Client cl = null;
@@ -115,6 +119,7 @@ public class ClientService implements IClientService {
      * in the database.
      */
     @Override
+    @Transactional
     public Client findClientByNumber(long number) throws ECareException {
         logger.info("Find client with telephone number: " + number + " in DB.");
         Client cl = null;
@@ -140,6 +145,7 @@ public class ClientService implements IClientService {
      * of entity and DAO returns null.
      */
     @Override
+    @Transactional
     public void deleteClient(long id) throws ECareException {
         logger.info("Delete client with id: " + id + " from DB.");
         Client cl = clDao.load(id);
@@ -162,6 +168,7 @@ public class ClientService implements IClientService {
      * and DAO returns null.
      */
     @Override
+    @Transactional
     public List<Client> getAllClients() throws ECareException {
         logger.info("Get all clients from DB.");
         List<Client> clients = clDao.getAll();
@@ -180,6 +187,7 @@ public class ClientService implements IClientService {
      * Method implements deleting of all clients from the database.
      */
     @Override
+    @Transactional
     public void deleteAllClients() {
         logger.info("Delete all clients from DB.");
         clDao.deleteAll();
@@ -192,10 +200,11 @@ public class ClientService implements IClientService {
      * @return number of clients in the database.
      */
     @Override
+    @Transactional
     public long getNumberOfClients() {
         logger.info("Get number of clients in DB.");
         long number = clDao.size();
-        logger.info(number + "of clients obtained fromDB.");
+        logger.info(number + " clients obtained from DB.");
         return number;
     }
 
@@ -206,6 +215,7 @@ public class ClientService implements IClientService {
      * @return true if client with input login exist, or false if client not exist.
      */
     @Override
+    @Transactional
     public boolean existLogin(String login) {
         logger.info("Find client with login: " + login + " in DB.");
         Client cl = null;
@@ -219,7 +229,7 @@ public class ClientService implements IClientService {
             return false;
         }
         logger.info("Client " + cl + " found in DB.");
-        // Else, if client exist and loaded, method return true.
+        // Else, if client exist and loaded, method returns true.
         return true;
     }
 }
