@@ -5,19 +5,19 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/style.css">
     <title>Operator's dashboard</title>
 </head>
 <body>
 
 <div class="outer-wrapper clearfix">
 
-    <jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="../fragments/header.jsp"></jsp:include>
 
     <div class="inner-wrapper">
 
         <p>
-            List of clients:
+            Clients list:
 
             <c:choose>
                 <c:when test="${clientsList.size() != 0}">
@@ -86,7 +86,7 @@
 
     </div>
 
-    <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="../fragments/footer.jsp"></jsp:include>
 
 </div>
 

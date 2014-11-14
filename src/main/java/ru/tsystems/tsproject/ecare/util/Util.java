@@ -1,7 +1,8 @@
 package ru.tsystems.tsproject.ecare.util;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.service.IClientService;
@@ -18,8 +19,8 @@ import java.util.Date;
 public class Util {
 
     /*Client service instance for method of checking telephone number on existing*/
-    @Autowired
-    private static IClientService clientService;
+    private static ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource-test.xml"});
+    private static IClientService clientService = (IClientService) context.getBean("clientService");
 
     /*Logger for util operations*/
     private static Logger logger = Logger.getLogger(Util.class);

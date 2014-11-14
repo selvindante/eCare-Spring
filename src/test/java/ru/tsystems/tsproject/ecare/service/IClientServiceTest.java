@@ -20,8 +20,8 @@ import static org.junit.Assert.assertEquals;
 
 public class IClientServiceTest {
 
-    private ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource-test.xml"});
-    private IClientService clientService = (IClientService) context.getBean("clientService");
+    private static ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource-test.xml"});
+    private static IClientService clientService = (IClientService) context.getBean("clientService");
 
     private static Client CL1, CL2, CL3;
 

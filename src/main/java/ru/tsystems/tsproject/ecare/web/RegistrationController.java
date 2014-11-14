@@ -1,8 +1,11 @@
-package ru.tsystems.tsproject.ecare.servlets;
+package ru.tsystems.tsproject.ecare.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
@@ -10,28 +13,36 @@ import ru.tsystems.tsproject.ecare.service.IClientService;
 import ru.tsystems.tsproject.ecare.util.PageName;
 import ru.tsystems.tsproject.ecare.util.Util;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Date;
 
 /**
  * Created by Selvin
- * on 14.10.2014.
+ * on 14.11.2014.
  */
 
 @Controller
-public class RegistrationServlet extends HttpServlet {
+public class RegistrationController {
+    private static Logger logger = Logger.getLogger(RegistrationController.class);
 
     @Autowired
     IClientService clientService;
 
-    private static Logger logger = Logger.getLogger(RegistrationServlet.class);
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String registration(Model model) {
+        model.addAttribute("name", "");
+        model.addAttribute("lastname", "");
+        model.addAttribute("birthdate", "");
+        model.addAttribute("passport", "");
+        model.addAttribute("address", "");
+        model.addAttribute("email", "");
+        model.addAttribute("pagename", PageName.REGISTRATION.toString());
+        logger.info("New user has enter to the registration page.");
+        return "registration";
+    }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @RequestMapping(value = "/addClient", method = RequestMethod.POST)
+    public String addClient(HttpServletRequest req) {
         try {
             String name = Util.checkStringLength(Util.checkStringOnEmpty(req.getParameter("name")));
             String lastname = Util.checkStringLength(req.getParameter("lastname"));
@@ -54,7 +65,7 @@ public class RegistrationServlet extends HttpServlet {
 
             logger.info("New user(client): " + client + " has registered in application.");
 
-            req.getRequestDispatcher("/client.jsp").forward(req, resp);
+            return "client/client";
         } catch (ECareException ecx) {
             req.setAttribute("name", req.getParameter("name"));
             req.setAttribute("lastname", req.getParameter("lastname"));
@@ -64,7 +75,7 @@ public class RegistrationServlet extends HttpServlet {
             req.setAttribute("email", req.getParameter("email"));
             req.setAttribute("pagename", PageName.REGISTRATION.toString());
             req.setAttribute("errormessage", ecx.getMessage());
-            req.getRequestDispatcher("/registration.jsp").forward(req, resp);
+            return "registration";
         }
     }
 }

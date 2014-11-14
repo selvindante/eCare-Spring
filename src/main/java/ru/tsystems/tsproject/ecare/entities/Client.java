@@ -55,7 +55,7 @@ public class Client implements Comparable<Client>{
     @Column(name = "amount")
     private int amount = 0;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client", fetch = FetchType.EAGER)
     private List<Contract> contracts = new ArrayList<>();
 
     public Client() {

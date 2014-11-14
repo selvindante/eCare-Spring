@@ -4,22 +4,22 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/style.css">
     <title>Client page</title>
 </head>
 <body>
 
 <div class="outer-wrapper clearfix">
 
-    <jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="../fragments/header.jsp"></jsp:include>
 
     <div class="inner-wrapper">
 
-        <p>
-            Personal info: <a href="#" onclick="document.getElementById('formId3').submit()" class="inline-link-edit" title="Edit client personal info"></a>
-        </p>
+        <header>
+            Personal info of ${client.getFullName()}: <a href="#" onclick="document.getElementById('formId3').submit()" class="inline-link-edit" title="Edit client personal info"></a>
+        </header>
 
-        <form id="formId3" method="post" action="client" enctype="application/x-www-form-urlencoded">
+        <form id="formId3" method="post" action="" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="id" value=${client.id}>
             <input type="hidden" name="action" value="editClient">
             <input type="hidden" name="sessionRole" value=${session.role}>
@@ -27,9 +27,6 @@
         </form>
 
         <br>
-        <p>
-            ID: ${client.id}
-        </p>
         <p>
             Name: ${client.name}
         </p>
@@ -51,8 +48,7 @@
         <p>
             Balance: ${client.amount}
         </p>
-        <br>
-        <form method="post" action="client" enctype="application/x-www-form-urlencoded">
+        <form method="post" action="" enctype="application/x-www-form-urlencoded">
             <p>
                 <input type="hidden" name="id" value=${client.id}>
                 <input type="hidden" name="action" value="addAmount">
@@ -65,22 +61,19 @@
     </div>
 
     <div class="inner-wrapper">
-        <c:if test="${session.role == 'admin'}">
-            <p>
-            <form id="formId4" method="post" action="client" enctype="application/x-www-form-urlencoded">
+            <form id="formId4" method="post" action="" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="id" value="${client.id}">
                 <input type="hidden" name="action" value="createContract">
                 <input type="hidden" name="sessionRole" value=${session.role}>
                 <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-                <a class="inline-link" href="#" onclick="document.getElementById('formId4').submit()">Add new contract</a>
             </form>
-            </p>
-            <br>
-        </c:if>
         <p>
-            List of contracts:
+            Contracts list:
         <c:choose>
             <c:when test="${client.getContracts().size() != 0}">
+                <c:if test="${session.role == 'admin'}">
+                    <a class="inline-link-add" title="Add new contract" href="#" onclick="document.getElementById('formId4').submit()"></a>
+                </c:if>
             </p>
             <br>
                 <table>
@@ -92,10 +85,10 @@
                             Tariff
                         </th>
                         <th>
-                            Is blocked by client?
+                            Blocked by client
                         </th>
-                        <th>
-                            Is blocked by operator?
+                        <th style="width: 170px">
+                            Blocked by operator
                         </th>
                         <c:if test="${session.role == 'admin'}">
                             <th style="width: 0">
@@ -107,7 +100,14 @@
                         </th>
                     </tr>
                     <c:forEach var="contract" items="${client.getContracts()}">
-                        <tr>
+                        <c:choose>
+                            <c:when test="${contract.isBlockedByClient() || contract.isBlockedByOperator()}">
+                                <tr style="background-color: rgba(255, 232, 232, 1);">
+                            </c:when>
+                            <c:otherwise>
+                                <tr>
+                            </c:otherwise>
+                        </c:choose>
                             <td>
 
                                 <form id="formId1${contract.id}" method="post" action="contract" enctype="application/x-www-form-urlencoded">
@@ -123,10 +123,16 @@
                                 ${contract.tariff.title}
                             </td>
                             <td>
-                                ${contract.isBlockedByClient()}
+                                <c:choose>
+                                    <c:when test="${contract.isBlockedByClient()}">Yes</c:when>
+                                    <c:otherwise>No</c:otherwise>
+                                </c:choose>
                             </td>
                             <td>
-                                ${contract.isBlockedByOperator()}
+                                <c:choose>
+                                    <c:when test="${contract.isBlockedByOperator()}">Yes</c:when>
+                                    <c:otherwise>No</c:otherwise>
+                                </c:choose>
                             </td>
                             <td style="width: 0">
                                 <c:choose>
@@ -204,12 +210,15 @@
             </c:when>
             <c:otherwise>
                  empty.
+                    <c:if test="${session.role == 'admin'}">
+                        <a class="inline-link-add" title="Add new contract" href="#" onclick="document.getElementById('formId4').submit()"></a>
+                    </c:if>
                 </p>
             </c:otherwise>
         </c:choose>
     </div>
 
-    <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="../fragments/footer.jsp"></jsp:include>
 
 </div>
 

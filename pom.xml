@@ -12,6 +12,7 @@
         <maven-shade-plugin.version>1.7.1</maven-shade-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.springframework.version>4.1.1.RELEASE</org.springframework.version>
+        <spring-data-jpa.version>1.7.0.RELEASE</spring-data-jpa.version>
     </properties>
 
     <dependencies>
@@ -24,6 +25,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
         </dependency>
 
         <!--
@@ -109,17 +116,6 @@
         </dependency>
 
         <!--
-            Object-to-XML Mapping (OXM) abstraction and integration with JAXB, JiBX, Castor, XStream, and XML Beans.
-            (depends on spring-core, spring-beans, spring-context)
-            Define this if you need OXM (org.springframework.oxm.*)
-        -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-oxm</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
-
-        <!--
             Web application development utilities applicable to both Servlet and Portlet Environments
             (depends on spring-core, spring-beans, spring-context)
             Define this if you use Spring MVC, or wish to use Struts, JSF, or another web framework with Spring (org.springframework.web.*)
@@ -137,16 +133,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
-
-        <!--
-            Spring MVC for Portlet Environments (depends on spring-core, spring-beans, spring-context, spring-web)
-            Define this if you use Spring MVC with a Portlet Container (org.springframework.web.portlet.*)
-        -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc-portlet</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
 

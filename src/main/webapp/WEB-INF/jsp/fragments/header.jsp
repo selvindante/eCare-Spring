@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <form id="h3ExitForm" method="post" action="login" enctype="application/x-www-form-urlencoded">
+    <form id="h3ExitForm" method="post" action="/logoutUser" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="action" value="logout">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
@@ -92,14 +92,15 @@
 
             <div class="inner-wrapper-header">
 
-                ${pagename}
+                    ${pagename}
 
-                <form style="float: right; margin-top: -15px;" method="post" action="dashboard" enctype="application/x-www-form-urlencoded">
+                    <a class="inline-link-search" title="Search" style="float: right; margin-top: -3px;" href="#" onclick="document.getElementById('IWHSearchForm').submit()"></a>
+
+                    <form id="IWHSearchForm" style="float: right; margin-top: -5px;" method="post" action="dashboard" enctype="application/x-www-form-urlencoded">
                     <input type="hidden" name="action" value="searchClientByNumber">
                     <input type="hidden" name="sessionRole" value=${session.role}>
                     <input type="hidden" name="sessionStatus" value=${session.isOn()}>
                     <input type="text" placeholder="search client by number" class="simple-input" name="number" size=20 value="">
-                    <button type="submit" class="modern">Search</button>
                 </form>
 
             </div>
