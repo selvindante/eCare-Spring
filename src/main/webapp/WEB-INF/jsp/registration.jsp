@@ -17,6 +17,12 @@
         <div class="h3-logo"></div>
     </h3>
 
+    <div class="inner-wrapper-header" style="padding: 15px 30px 15px;">
+
+        ${pagename}
+
+    </div>
+
     <c:if test="${errormessage != null}">
         <div class="inner-wrapper-error" id="error">
             <p>
@@ -31,12 +37,6 @@
         </SCRIPT>
 
     </c:if>
-
-    <div class="inner-wrapper-header" style="padding: 15px 30px 15px;">
-
-        ${pagename}
-
-    </div>
 
     <div class="inner-wrapper" style="padding-left: 50px">
 

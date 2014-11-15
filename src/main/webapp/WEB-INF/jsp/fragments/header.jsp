@@ -6,49 +6,42 @@
 </head>
 <body>
 
-    <form id="h3ExitForm" method="post" action="/logoutUser" enctype="application/x-www-form-urlencoded">
-        <input type="hidden" name="action" value="logout">
+    <form id="h3ExitForm" method="post" action="logoutUser" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
 
-    <form id="h3TariffsForm" method="post" action="dashboard" enctype="application/x-www-form-urlencoded">
-        <input type="hidden" name="action" value="viewAllTariffs">
+    <form id="h3TariffsForm" method="post" action="viewAllTariffs" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
 
-    <form id="h3DashboardForm" method="post" action="dashboard" enctype="application/x-www-form-urlencoded">
-        <input type="hidden" name="action" value="viewDashboard">
+    <form id="h3DashboardForm" method="post" action="viewDashboard" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
 
-    <form id="h3ClientForm" method="post" action="client" enctype="application/x-www-form-urlencoded">
+    <form id="h3ClientForm" method="post" action="viewClient" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="id" value=${client.id}>
-        <input type="hidden" name="action" value="viewClient">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
 
-    <form id="h3TariffForm" method="post" action="tariff" enctype="application/x-www-form-urlencoded">
+    <form id="h3TariffForm" method="post" action="viewTariff" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="id" value=${tariff.id}>
-        <input type="hidden" name="action" value="viewTariff">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
 
-    <form id="h3OptionForm" method="post" action="option" enctype="application/x-www-form-urlencoded">
+    <form id="h3OptionForm" method="post" action="viewOption" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="id" value=${option.id}>
         <input type="hidden" name="tariffId" value=${tariff.id}>
-        <input type="hidden" name="action" value="viewOption">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
 
-    <form id="h3ContractForm" method="post" action="contract" enctype="application/x-www-form-urlencoded">
+    <form id="h3ContractForm" method="post" action="viewContract" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="id" value=${contract.id}>
-        <input type="hidden" name="action" value="viewContract">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
     </form>
@@ -96,8 +89,7 @@
 
                     <a class="inline-link-search" title="Search" style="float: right; margin-top: -3px;" href="#" onclick="document.getElementById('IWHSearchForm').submit()"></a>
 
-                    <form id="IWHSearchForm" style="float: right; margin-top: -5px;" method="post" action="dashboard" enctype="application/x-www-form-urlencoded">
-                    <input type="hidden" name="action" value="searchClientByNumber">
+                    <form id="IWHSearchForm" style="float: right; margin-top: -5px;" method="post" action="searchClientByNumber" enctype="application/x-www-form-urlencoded">
                     <input type="hidden" name="sessionRole" value=${session.role}>
                     <input type="hidden" name="sessionStatus" value=${session.isOn()}>
                     <input type="text" placeholder="search client by number" class="simple-input" name="number" size=20 value="">

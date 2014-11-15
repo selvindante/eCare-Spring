@@ -1,68 +1,589 @@
-2014-11-14 20:13:34 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
-2014-11-14 20:13:34 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
-2014-11-14 20:13:34 INFO  Environment:239 - HHH000206: hibernate.properties not found
-2014-11-14 20:13:34 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
-2014-11-14 20:13:34 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+2014-11-15 17:20:28 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:20:28 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:20:28 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:20:28 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:20:28 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
 	name: ECARE
 	...]
-2014-11-14 20:13:35 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
-2014-11-14 20:13:35 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-2014-11-14 20:13:35 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
-2014-11-14 20:13:36 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
-2014-11-14 20:13:38 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+2014-11-15 17:20:29 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:20:30 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:20:30 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:20:30 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:20:32 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
 	name: ECARE
 	...]
-2014-11-14 20:13:38 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
-2014-11-14 20:13:38 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-2014-11-14 20:13:38 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
-2014-11-14 20:13:38 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
-2014-11-14 20:13:38 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
-2014-11-14 20:13:57 INFO  ClientService:97 - Find client with login: client and password:123456 in DB.
-2014-11-14 20:13:57 INFO  ClientService:109 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} found and loaded from DB.
-2014-11-14 20:13:57 INFO  LoginController:49 - User(client): Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} login in application.
-2014-11-14 20:17:19 INFO  ClientService:97 - Find client with login: client and password:123456 in DB.
-2014-11-14 20:17:19 INFO  ClientService:109 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} found and loaded from DB.
-2014-11-14 20:17:19 INFO  LoginController:49 - User(client): Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} login in application.
-2014-11-14 20:17:27 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
-2014-11-14 20:17:27 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
-2014-11-14 20:17:27 INFO  ClientService:173 - Get all clients from DB.
-2014-11-14 20:17:27 INFO  ClientService:181 - All clients obtained from DB.
-2014-11-14 20:17:27 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
-2014-11-14 20:17:46 INFO  LoginController:75 - User has logout from application.
-2014-11-14 20:18:06 INFO  ClientService:97 - Find client with login: client and password:123456 in DB.
-2014-11-14 20:18:06 INFO  ClientService:109 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} found and loaded from DB.
-2014-11-14 20:18:06 INFO  LoginController:49 - User(client): Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} login in application.
-2014-11-14 20:21:24 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
-2014-11-14 20:21:24 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
-2014-11-14 20:21:24 INFO  Environment:239 - HHH000206: hibernate.properties not found
-2014-11-14 20:21:24 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
-2014-11-14 20:21:24 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+2014-11-15 17:20:32 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:20:32 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:20:32 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:20:32 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:20:32 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:20:45 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 17:20:45 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 17:20:45 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 17:20:46 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 17:20:46 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 17:20:54 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 17:20:54 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 17:20:54 INFO  DashboardController:38 - User admin went to view dashboard page.
+2014-11-15 17:20:58 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 17:20:58 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 17:20:58 INFO  DashboardController:38 - User admin went to view dashboard page.
+2014-11-15 17:20:59 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:20:59 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:20:59 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:21:04 INFO  TariffService:70 - Load tariff with id: 2042 from DB.
+2014-11-15 17:21:04 INFO  TariffService:78 - Tariff Tariff{title='Summer', price=200} loaded from DB.
+2014-11-15 17:21:04 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:22:42 INFO  OptionService:73 - Load option with id: 7100 from DB.
+2014-11-15 17:22:42 INFO  OptionService:81 - Options Option{title='Answerphone', price=4, costOfConnection=40} loaded from DB.
+2014-11-15 17:22:42 INFO  TariffService:70 - Load tariff with id: 2042 from DB.
+2014-11-15 17:22:42 INFO  TariffService:78 - Tariff Tariff{title='Summer', price=200} loaded from DB.
+2014-11-15 17:22:42 INFO  OptionController:107 - User admin went to view option page.
+2014-11-15 17:22:47 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:22:47 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:22:47 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:22:49 INFO  TariffService:70 - Load tariff with id: 2042 from DB.
+2014-11-15 17:22:49 INFO  TariffService:78 - Tariff Tariff{title='Summer', price=200} loaded from DB.
+2014-11-15 17:22:49 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:22:52 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:22:52 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:22:52 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:22:53 INFO  TariffService:70 - Load tariff with id: 2044 from DB.
+2014-11-15 17:22:53 INFO  TariffService:78 - Tariff Tariff{title='Winter', price=250} loaded from DB.
+2014-11-15 17:22:53 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:23:20 INFO  OptionService:73 - Load option with id: 7108 from DB.
+2014-11-15 17:23:20 INFO  OptionService:81 - Options Option{title='Winter calls', price=2, costOfConnection=120} loaded from DB.
+2014-11-15 17:23:20 INFO  TariffService:70 - Load tariff with id: 2044 from DB.
+2014-11-15 17:23:20 INFO  TariffService:78 - Tariff Tariff{title='Winter', price=250} loaded from DB.
+2014-11-15 17:23:20 INFO  OptionController:107 - User admin went to view option page.
+2014-11-15 17:23:30 INFO  TariffService:70 - Load tariff with id: 2044 from DB.
+2014-11-15 17:23:30 INFO  TariffService:78 - Tariff Tariff{title='Winter', price=250} loaded from DB.
+2014-11-15 17:23:30 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:23:32 INFO  OptionService:73 - Load option with id: 7108 from DB.
+2014-11-15 17:23:32 INFO  OptionService:81 - Options Option{title='Winter calls', price=2, costOfConnection=120} loaded from DB.
+2014-11-15 17:23:32 INFO  TariffService:70 - Load tariff with id: 2044 from DB.
+2014-11-15 17:23:32 INFO  TariffService:78 - Tariff Tariff{title='Winter', price=250} loaded from DB.
+2014-11-15 17:23:32 INFO  OptionController:107 - User admin went to view option page.
+2014-11-15 17:23:33 INFO  TariffService:70 - Load tariff with id: 2044 from DB.
+2014-11-15 17:23:33 INFO  TariffService:78 - Tariff Tariff{title='Winter', price=250} loaded from DB.
+2014-11-15 17:23:33 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:23:34 INFO  OptionService:73 - Load option with id: 7108 from DB.
+2014-11-15 17:23:34 INFO  OptionService:81 - Options Option{title='Winter calls', price=2, costOfConnection=120} loaded from DB.
+2014-11-15 17:23:34 INFO  TariffService:70 - Load tariff with id: 2044 from DB.
+2014-11-15 17:23:34 INFO  TariffService:78 - Tariff Tariff{title='Winter', price=250} loaded from DB.
+2014-11-15 17:23:34 INFO  OptionController:107 - User admin went to view option page.
+2014-11-15 17:23:42 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:23:42 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:23:42 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:23:43 INFO  TariffService:70 - Load tariff with id: 2043 from DB.
+2014-11-15 17:23:43 INFO  TariffService:78 - Tariff Tariff{title='Autumn', price=300} loaded from DB.
+2014-11-15 17:23:43 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:23:49 INFO  OptionService:73 - Load option with id: 7102 from DB.
+2014-11-15 17:23:49 INFO  OptionService:81 - Options Option{title='Autumn calls', price=3, costOfConnection=100} loaded from DB.
+2014-11-15 17:23:49 INFO  TariffService:70 - Load tariff with id: 2043 from DB.
+2014-11-15 17:23:49 INFO  TariffService:78 - Tariff Tariff{title='Autumn', price=300} loaded from DB.
+2014-11-15 17:23:49 INFO  OptionController:107 - User admin went to view option page.
+2014-11-15 17:25:21 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:25:21 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:25:21 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:25:21 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:25:21 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
 	name: ECARE
 	...]
-2014-11-14 20:21:25 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
-2014-11-14 20:21:26 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-2014-11-14 20:21:26 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
-2014-11-14 20:21:26 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
-2014-11-14 20:21:28 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+2014-11-15 17:25:23 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:25:23 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:25:23 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:25:23 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:25:26 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
 	name: ECARE
 	...]
-2014-11-14 20:21:28 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
-2014-11-14 20:21:29 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-2014-11-14 20:21:29 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
-2014-11-14 20:21:29 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
-2014-11-14 20:21:29 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
-2014-11-14 20:21:41 INFO  ClientService:97 - Find client with login: client and password:123456 in DB.
-2014-11-14 20:21:41 INFO  ClientService:109 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} found and loaded from DB.
-2014-11-14 20:21:41 INFO  LoginController:49 - User(client): Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} login in application.
-2014-11-14 20:21:46 INFO  LoginController:75 - User has logout from application.
-2014-11-14 20:21:52 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
-2014-11-14 20:21:52 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
-2014-11-14 20:21:52 INFO  ClientService:173 - Get all clients from DB.
-2014-11-14 20:21:52 INFO  ClientService:181 - All clients obtained from DB.
-2014-11-14 20:21:52 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
-2014-11-14 20:22:13 INFO  LoginController:75 - User has logout from application.
-2014-11-14 20:22:15 INFO  RegistrationController:40 - New user has enter to the registration page.
-2014-11-14 20:22:25 INFO  ClientService:97 - Find client with login: client and password:123456 in DB.
-2014-11-14 20:22:25 INFO  ClientService:109 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} found and loaded from DB.
-2014-11-14 20:22:25 INFO  LoginController:49 - User(client): Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client', password='123456', role='client', amount=0} login in application.
-2014-11-14 20:22:52 INFO  LoginController:75 - User has logout from application.
+2014-11-15 17:25:26 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:25:26 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:25:26 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:25:26 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:25:26 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:25:36 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 17:25:36 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 17:25:36 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 17:25:37 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 17:25:37 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 17:25:40 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:25:40 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:25:40 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:25:44 INFO  TariffService:70 - Load tariff with id: 2042 from DB.
+2014-11-15 17:25:44 INFO  TariffService:78 - Tariff Tariff{title='Summer', price=200} loaded from DB.
+2014-11-15 17:25:44 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:34:00 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:34:00 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:34:00 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:34:00 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:34:00 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:34:01 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:34:02 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:34:02 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:34:02 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:34:04 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:34:04 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:34:04 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:34:04 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:34:04 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:34:04 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:38:31 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:38:31 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:38:31 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:38:31 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:38:31 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:38:32 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:38:32 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:38:32 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:38:33 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:38:35 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:38:35 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:38:35 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:38:35 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:38:35 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:38:35 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:42:19 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:42:20 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:42:20 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:42:20 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:42:20 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:42:21 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:42:21 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:42:21 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:42:21 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:42:23 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:42:23 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:42:23 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:42:23 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:42:23 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:42:23 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:42:37 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 17:42:37 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 17:42:37 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 17:42:37 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 17:42:37 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 17:42:44 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:42:44 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:42:44 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:42:49 INFO  TariffService:70 - Load tariff with id: 2042 from DB.
+2014-11-15 17:42:49 INFO  TariffService:78 - Tariff Tariff{title='Summer', price=200} loaded from DB.
+2014-11-15 17:42:49 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 17:46:25 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:46:25 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:46:25 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:46:25 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:46:25 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:46:26 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:46:27 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:46:27 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:46:27 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:46:29 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:46:29 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:46:29 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:46:29 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:46:29 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:46:29 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:55:20 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 17:55:20 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 17:55:20 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 17:55:20 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 17:55:20 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:55:22 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:55:22 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:55:23 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:55:23 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:55:25 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 17:55:25 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 17:55:25 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 17:55:25 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 17:55:25 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 17:55:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 17:55:34 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 17:55:34 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 17:55:34 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 17:55:34 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 17:55:34 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 17:55:42 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 17:55:42 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 17:55:42 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 17:55:44 INFO  TariffService:70 - Load tariff with id: 2042 from DB.
+2014-11-15 17:55:44 INFO  TariffService:78 - Tariff Tariff{title='Summer', price=200} loaded from DB.
+2014-11-15 17:55:44 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 18:16:51 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:16:51 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:16:51 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:16:51 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:16:51 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:16:53 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:16:53 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:16:53 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:16:53 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:17:18 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:17:18 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:17:18 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:17:18 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:17:18 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:17:19 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:17:20 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:17:20 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:17:20 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:18:31 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:18:32 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:18:32 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:18:32 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:18:32 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:18:33 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:18:33 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:18:34 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:18:34 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:19:02 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:19:02 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:19:02 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:19:02 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:19:02 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:19:03 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:19:03 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:19:03 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:19:03 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:20:39 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:20:39 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:20:39 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:20:39 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:20:39 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:20:40 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:20:41 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:20:41 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:20:41 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:25:01 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:25:01 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:25:01 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:25:01 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:25:02 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:25:03 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:25:03 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:25:03 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:25:03 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:27:39 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 18:27:39 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 18:27:39 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 18:27:39 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 18:27:39 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:27:40 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:27:41 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:27:41 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:27:41 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:27:43 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 18:27:43 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 18:27:43 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 18:27:43 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 18:27:43 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 18:27:43 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 18:27:53 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 18:27:53 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 18:27:53 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 18:27:53 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 18:27:53 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 18:27:57 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 18:27:57 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 18:27:57 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 18:28:01 INFO  TariffsListController:47 - User admin went to create new tariff page.
+2014-11-15 18:28:18 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-15 18:28:18 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-15 18:28:18 INFO  TariffController:44 - New tariff Tariff{title='Spring', price=200} created.
+2014-11-15 18:28:24 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 18:28:24 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 18:28:24 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-15 18:28:26 INFO  TariffService:70 - Load tariff with id: 2045 from DB.
+2014-11-15 18:28:26 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-15 18:28:26 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-15 18:28:41 INFO  TariffService:93 - Delete tariff with id: 2045 from DB.
+2014-11-15 18:28:41 INFO  TariffService:103 - Tariff Tariff{title='Spring', price=200} deleted from DB.
+2014-11-15 18:28:41 INFO  TariffController:75 - Tariff with id: 2045 deleted from database.
+2014-11-15 18:28:41 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-15 18:28:41 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-15 18:28:41 INFO  TariffController:79 - User admin went to all tariffs page.
+2014-11-15 18:28:47 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 18:28:47 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 18:28:47 INFO  DashboardController:38 - User admin went to view dashboard page.
+2014-11-15 19:11:56 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 19:11:56 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 19:11:56 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 19:11:56 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 19:11:56 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:11:57 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:11:58 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:11:58 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:11:58 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:12:00 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:12:00 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:12:00 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:12:00 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:12:00 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:12:00 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 19:12:12 INFO  ClientService:97 - Find client with login: young@mail.com and password:123456 in DB.
+2014-11-15 19:12:12 INFO  ClientService:109 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} found and loaded from DB.
+2014-11-15 19:12:13 INFO  LoginController:49 - User(client): Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} login in application.
+2014-11-15 19:12:18 INFO  ContractService:79 - Load contract with id: 1758 from DB.
+2014-11-15 19:12:18 INFO  ContractService:87 - Contract Contract{number=9210001122, tariff=Tariff{title='Summer', price=200}, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000}} loaded from DB.
+2014-11-15 19:12:18 INFO  ContractController:77 - User client went to view contract page.
+2014-11-15 19:12:28 INFO  LoginController:75 - User has logout from application.
+2014-11-15 19:12:33 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 19:12:33 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 19:12:33 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 19:12:33 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 19:12:33 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 19:12:36 INFO  ClientService:71 - Load client with id: 3312 from DB.
+2014-11-15 19:12:36 INFO  ClientService:79 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} loaded from DB.
+2014-11-15 19:12:36 INFO  ClientController:38 - User admin went to client page.
+2014-11-15 19:12:40 INFO  ClientService:71 - Load client with id: 3312 from DB.
+2014-11-15 19:12:40 INFO  ClientService:79 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} loaded from DB.
+2014-11-15 19:12:40 INFO  ClientController:52 - User admin went to edit client page.
+2014-11-15 19:14:05 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 19:14:05 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 19:14:05 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 19:14:05 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 19:14:05 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:14:06 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:14:07 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:14:07 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:14:07 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:14:09 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:14:09 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:14:09 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:14:09 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:14:09 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:14:09 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 19:14:19 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 19:14:20 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 19:14:20 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 19:14:20 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 19:14:20 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 19:14:48 INFO  ClientService:71 - Load client with id: 3312 from DB.
+2014-11-15 19:14:48 INFO  ClientService:79 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} loaded from DB.
+2014-11-15 19:14:48 INFO  ClientController:38 - User admin went to client page.
+2014-11-15 19:14:52 INFO  ClientService:71 - Load client with id: 3312 from DB.
+2014-11-15 19:14:52 INFO  ClientService:79 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} loaded from DB.
+2014-11-15 19:14:52 INFO  ClientController:52 - User admin went to edit client page.
+2014-11-15 19:14:55 INFO  ClientService:71 - Load client with id: 3312 from DB.
+2014-11-15 19:14:55 INFO  ClientService:79 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} loaded from DB.
+2014-11-15 19:14:55 INFO  ClientService:47 - Save/update client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} in DB.
+2014-11-15 19:14:55 INFO  ClientService:55 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} saved/updated in DB.
+2014-11-15 19:14:55 INFO  ClientController:74 - Personal info of client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} updated.
+2014-11-15 19:15:02 INFO  ClientController:114 - User admin went to create contract page.
+2014-11-15 19:16:24 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 19:16:24 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 19:16:24 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 19:16:24 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 19:16:24 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:16:25 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:16:26 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:16:26 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:16:26 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:16:29 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:16:29 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:16:29 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:16:29 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:16:29 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:16:29 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 19:16:39 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 19:16:40 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 19:16:40 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 19:16:40 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 19:16:40 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 19:16:43 INFO  ClientService:71 - Load client with id: 3312 from DB.
+2014-11-15 19:16:43 INFO  ClientService:79 - Client Client{name='Angus', lastname='Young', passport=2132435465, address='Scotland', email='young@mail.com', password='123456', role='client', amount=1000} loaded from DB.
+2014-11-15 19:16:43 INFO  ClientController:38 - User admin went to client page.
+2014-11-15 19:16:47 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 19:16:47 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 19:16:47 INFO  DashboardController:38 - User admin went to view dashboard page.
+2014-11-15 19:16:49 INFO  ClientService:71 - Load client with id: 3315 from DB.
+2014-11-15 19:16:49 INFO  ClientService:79 - Client Client{name='Brian', lastname='Carroll', passport=7348261743, address='USA', email='bucket@mail.com', password='123456', role='client', amount=0} loaded from DB.
+2014-11-15 19:16:49 INFO  ClientController:38 - User admin went to client page.
+2014-11-15 19:16:51 INFO  ClientController:114 - User admin went to create contract page.
+2014-11-15 19:19:29 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-15 19:19:29 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2014-11-15 19:19:29 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-15 19:19:29 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-15 19:19:29 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:19:30 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:19:30 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:19:31 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:19:31 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:19:33 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-15 19:19:33 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-15 19:19:33 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-15 19:19:33 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-15 19:19:33 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-15 19:19:33 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-15 19:19:43 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-15 19:19:43 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-15 19:19:43 INFO  ClientService:173 - Get all clients from DB.
+2014-11-15 19:19:43 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-15 19:19:43 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-15 19:19:48 INFO  ClientService:71 - Load client with id: 3315 from DB.
+2014-11-15 19:19:48 INFO  ClientService:79 - Client Client{name='Brian', lastname='Carroll', passport=7348261743, address='USA', email='bucket@mail.com', password='123456', role='client', amount=0} loaded from DB.
+2014-11-15 19:19:48 INFO  ClientController:38 - User admin went to client page.
+2014-11-15 19:19:50 INFO  ClientService:71 - Load client with id: 3315 from DB.
+2014-11-15 19:19:50 INFO  ClientService:79 - Client Client{name='Brian', lastname='Carroll', passport=7348261743, address='USA', email='bucket@mail.com', password='123456', role='client', amount=0} loaded from DB.
+2014-11-15 19:19:50 INFO  ClientController:117 - User admin went to create contract page.
+2014-11-15 19:20:27 INFO  ClientService:71 - Load client with id: 3315 from DB.
+2014-11-15 19:20:27 INFO  ClientService:79 - Client Client{name='Brian', lastname='Carroll', passport=7348261743, address='USA', email='bucket@mail.com', password='123456', role='client', amount=0} loaded from DB.
+2014-11-15 19:20:27 INFO  ClientController:38 - User admin went to client page.
+2014-11-15 19:20:35 INFO  LoginController:75 - User has logout from application.
+2014-11-15 19:20:36 INFO  RegistrationController:40 - New user has enter to the registration page.
+2014-11-15 19:20:42 INFO  ClientService:97 - Find client with login:  and password: in DB.
+2014-11-15 19:20:42 WARN  ClientService:106 - Incorrect login/password or client does not exist.
+javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.ejb.QueryImpl.getSingleResult(QueryImpl.java:286)
+	at ru.tsystems.tsproject.ecare.dao.ClientDao.findClientByLoginAndPassword(ClientDao.java:35)
+	at ru.tsystems.tsproject.ecare.service.ClientService.findClient(ClientService.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:266)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy32.findClient(Unknown Source)
+	at ru.tsystems.tsproject.ecare.web.LoginController.loginUser(LoginController.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:781)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:721)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:136)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:526)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:655)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2014-11-15 19:20:44 INFO  RegistrationController:40 - New user has enter to the registration page.
+2014-11-15 19:20:46 WARN  Util:59 - Required string is empty.
+ru.tsystems.tsproject.ecare.ECareException: Required string is empty.
+	at ru.tsystems.tsproject.ecare.util.Util.checkStringOnEmpty(Util.java:58)
+	at ru.tsystems.tsproject.ecare.web.RegistrationController.addClient(RegistrationController.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:781)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:721)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:136)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:526)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:655)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)

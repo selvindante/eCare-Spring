@@ -1,13 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="ru.tsystems.tsproject.ecare.entities.Client" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../../../resources/css/style.css">
-    <title>Operator's dashboard</title>
+    <title>List of all tariffs</title>
 </head>
+
 <body>
 
 <div class="outer-wrapper clearfix">
@@ -16,59 +16,57 @@
 
     <div class="inner-wrapper">
 
-        <p>
-            Clients list:
+            <form id="formId3" method="post" action="newTariff" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="sessionRole" value=${session.role}>
+                <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                Tariffs list: <a class="inline-link-add" title="Create new tariff" href="#" onclick="document.getElementById('formId3').submit()"></a>
+            </form>
 
             <c:choose>
-                <c:when test="${clientsList.size() != 0}">
-                </p>
-                <br>
+                <c:when test="${tariffs.size() != 0}">
+
+                    </p>
+                    <br>
                     <table>
                         <tr>
                             <th>
-                                Client ID
+                                Tariff ID
                             </th>
                             <th>
-                                Name
+                                Title
                             </th>
                             <th>
-                                Passport
-                            </th>
-                            <th>
-                                E-mail
+                                Price
                             </th>
                             <th style="width: 0">
                                     ${HtmlUtil.EMPTY_TD}
                             </th>
                         </tr>
-                        <c:forEach var="client" items="${clientsList}">
+                        <c:forEach var="tariff" items="${tariffs}">
                             <tr>
                                 <td>
 
-                                    <form id="formId2${client.id}" method="post" action="viewClient" enctype="application/x-www-form-urlencoded">
-                                        <input type="hidden" name="id" value=${client.id}>
+                                    <form id="formId5${tariff.id}" method="post" action="viewTariff" enctype="application/x-www-form-urlencoded">
+                                        <input type="hidden" name="id" value=${tariff.id}>
                                         <input type="hidden" name="sessionRole" value=${session.role}>
                                         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-                                        <a class="inline-link" href="#" onclick="document.getElementById('formId2${client.id}').submit()">${client.id}</a>
+                                        <a class="inline-link" href="#" onclick="document.getElementById('formId5${tariff.id}').submit()">${tariff.id}</a>
                                     </form>
 
                                 </td>
                                 <td>
-                                        ${client.name}
+                                        ${tariff.title}
                                 </td>
                                 <td>
-                                        ${client.passport}
-                                </td>
-                                <td>
-                                        ${client.email}
+                                        ${tariff.price}
                                 </td>
                                 <td style="width: 0">
 
-                                    <form id="formId3${client.id}" method="post" action="deleteClient" enctype="application/x-www-form-urlencoded">
-                                        <input type="hidden" name="id" value=${client.id}>
+                                    <form id="formId6${tariff.id}" method="post" action="deleteTariff" enctype="application/x-www-form-urlencoded">
+                                        <input type="hidden" name="id" value=${tariff.id}>
                                         <input type="hidden" name="sessionRole" value=${session.role}>
                                         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-                                        <a class="inline-link-delete" title="Delete client" href="#" onclick="document.getElementById('formId3${client.id}').submit()"></a>
+                                        <a class="inline-link-delete" title="Delete tariff" href="#" onclick="document.getElementById('formId6${tariff.id}').submit()"></a>
                                     </form>
 
                                 </td>
@@ -80,7 +78,7 @@
                     empty.
                     </p>
                 </c:otherwise>
-            </c:choose>
+                </c:choose>
 
     </div>
 
@@ -89,5 +87,4 @@
 </div>
 
 </body>
-
 </html>
