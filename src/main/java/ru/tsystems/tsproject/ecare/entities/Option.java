@@ -95,20 +95,12 @@ public class Option implements Comparable<Option>{
         return costOfConnection;
     }
 
-    public void setCostOfConnection(int costOfConnection) {
-        this.costOfConnection = costOfConnection;
-    }
-
     public Tariff getTariff() {
         return tariff;
     }
 
     public Set<Option> getDependentOptions() {
         return dependentOptions;
-    }
-
-    public void setDependentOptions(Set<Option> dependentOptions) {
-        this.dependentOptions = dependentOptions;
     }
 
     public void addDependentOption(Option op) {
@@ -149,14 +141,14 @@ public class Option implements Comparable<Option>{
 
         if (costOfConnection != option.costOfConnection) return false;
         if (price != option.price) return false;
-        if (!title.equals(option.title)) return false;
+        if (title != null ? !title.equals(option.title) : option.title != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = title.hashCode();
+        int result = title != null ? title.hashCode() : 0;
         result = 31 * result + price;
         result = 31 * result + costOfConnection;
         return result;

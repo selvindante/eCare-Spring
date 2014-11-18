@@ -8,10 +8,7 @@ import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.dao.OptionDao;
 import ru.tsystems.tsproject.ecare.entities.Option;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * This class is the implementation of IOptionService for working with option DAO

@@ -263,6 +263,9 @@ public class ContractService implements IContractService {
             //If contract not blocked by client already.
             if(!cn.isBlockedByClient()) {
                 cn.setBlockByClient(true);
+                Client client = cn.getClient();
+                client.getContracts().add(cn);
+                clientService.saveOrUpdateClient(client);
                 logger.info("Contract " + cn.getId() + " is blocked by client.");
             }
             else {
@@ -293,6 +296,9 @@ public class ContractService implements IContractService {
             //If contract blocked by client.
             if(cn.isBlockedByClient()) {
                 cn.setBlockByClient(false);
+                Client client = cn.getClient();
+                client.getContracts().add(cn);
+                clientService.saveOrUpdateClient(client);
                 logger.info("Contract " + cn.getId() + " is unblocked by client.");
             }
             else {
@@ -320,6 +326,9 @@ public class ContractService implements IContractService {
         //If contract not blocked by operator already.
         if(!cn.isBlockedByOperator()) {
             cn.setBlockByOperator(true);
+            Client client = cn.getClient();
+            client.getContracts().add(cn);
+            clientService.saveOrUpdateClient(client);
             logger.info("Contract " + cn.getId() + " is blocked by operator.");
         }
         else {
@@ -341,6 +350,9 @@ public class ContractService implements IContractService {
         //If contract blocked by operator.
         if(cn.isBlockedByOperator()) {
             cn.setBlockByOperator(false);
+            Client client = cn.getClient();
+            client.getContracts().add(cn);
+            clientService.saveOrUpdateClient(client);
             logger.info("Contract " + cn.getId() + " is unblocked by operator.");
         }
         else {

@@ -2,8 +2,10 @@ package ru.tsystems.tsproject.ecare;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tsystems.tsproject.ecare.entities.Contract;
-import ru.tsystems.tsproject.ecare.service.IContractService;
+import ru.tsystems.tsproject.ecare.entities.Option;
+import ru.tsystems.tsproject.ecare.service.IOptionService;
+
+import java.util.List;
 
 /**
  * Created by Selvin
@@ -14,13 +16,9 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
-        /*ITariffService tariffService = (ITariffService)context.getBean("tariffService");
-        Tariff tr = tariffService.loadTariff(2042l);
-        System.out.println(tr);*/
-
-        IContractService contractService = (IContractService)context.getBean("contractService");
-        Contract cn = contractService.loadContract(1758l);
-        System.out.println(cn);
+        IOptionService optionService = (IOptionService)context.getBean("optionService");
+        List<Option> options = optionService.getAllOptionsForTariff(2047l);
+        Option option = optionService.loadOption(7131l);
 
 
         /*IClientService clientService = (IClientService) context.getBean("clientService");

@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../../../resources/css/style.css">
     <title>Step 2. Choose options</title>
-
 </head>
 
 <body>
@@ -100,7 +99,7 @@
 
                                             <c:forEach items="${option.getDependentOptions()}" var="dependentOption">
                                                 $("#box${dependentOption.id}").attr("disabled", true);
-                                                $("#dep${dependentOption.id}").attr("style", "width: 200; background: rgba(255, 232, 232, 0.52); font-size: 12px; color: #C90000");
+                                                $("#dep${dependentOption.id}").attr("style", "width: 200; background: rgba(216, 255, 213, 0.38); font-size: 12px; color: #008d47");
                                             </c:forEach>
 
                                         </c:if>
@@ -109,7 +108,7 @@
 
                                             <c:forEach items="${option.getIncompatibleOptions()}" var="incompatibleOption">
                                                 $("#box${incompatibleOption.id}").attr("disabled", true);
-                                                $("#inc${incompatibleOption.id}").attr("style", "width: 200; background: rgba(216, 255, 213, 0.38); font-size: 12px; color: #008d47");
+                                                $("#inc${incompatibleOption.id}").attr("style", "width: 200; background: rgba(255, 232, 232, 0.52); font-size: 12px; color: #C90000");
                                             </c:forEach>
 
                                         </c:if>
