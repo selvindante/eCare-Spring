@@ -128,7 +128,7 @@ public class IContractServiceTest {
     @Test
     public void enableOptionTest() {
         CN12 = contractService.enableOption(CN12, OP11);
-        assertEquals(OP11, CN12.getOptions().get(0));
+        assertEquals(true, CN12.getOptions().contains(OP11));
         CN12 = contractService.disableOption(CN12, OP11);
         assertEquals(0, CN12.getOptions().size());
     }

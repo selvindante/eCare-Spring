@@ -1,8 +1,8 @@
 package ru.tsystems.tsproject.ecare.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Selvin
@@ -29,8 +29,8 @@ public class Tariff implements Comparable<Tariff>{
     @Column(name = "price")
     private int price;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tariff")
-    private List<Option> options  = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tariff", fetch = FetchType.EAGER)
+    private Set<Option> options  = new HashSet<>();
 
     public Tariff() {
     }
@@ -64,11 +64,11 @@ public class Tariff implements Comparable<Tariff>{
         this.price = price;
     }
 
-    public List<Option> getOptions() {
+    public Set<Option> getOptions() {
         return options;
     }
 
-    public void setOptions(List<Option> options) {
+    public void setOptions(Set<Option> options) {
         this.options = options;
     }
 

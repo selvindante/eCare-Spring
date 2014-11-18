@@ -1,9 +1,7 @@
 package ru.tsystems.tsproject.ecare.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Selvin
@@ -56,7 +54,7 @@ public class Client implements Comparable<Client>{
     private int amount = 0;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client", fetch = FetchType.EAGER)
-    private List<Contract> contracts = new ArrayList<>();
+    private Set<Contract> contracts = new HashSet<>();
 
     public Client() {
     }
@@ -166,7 +164,7 @@ public class Client implements Comparable<Client>{
         this.amount += amount;
     }
 
-    public List<Contract> getContracts() {
+    public Set<Contract> getContracts() {
         return contracts;
     }
 

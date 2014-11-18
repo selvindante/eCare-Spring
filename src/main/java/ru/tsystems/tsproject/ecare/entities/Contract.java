@@ -1,8 +1,8 @@
 package ru.tsystems.tsproject.ecare.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Selvin
@@ -43,14 +43,14 @@ public class Contract implements Comparable<Contract>{
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable
             (
                     name="connected_option",
                     joinColumns={ @JoinColumn(name="contract_id", referencedColumnName="contract_id") },
                     inverseJoinColumns={ @JoinColumn(name="option_id", referencedColumnName="option_id") }
             )
-    private List<Option> options = new ArrayList<>();
+    private Set<Option> options = new HashSet<>();
 
     public Contract() {
     }
@@ -112,7 +112,7 @@ public class Contract implements Comparable<Contract>{
         this.client = client;
     }
 
-    public List<Option> getOptions() {
+    public Set<Option> getOptions() {
         return options;
     }
 

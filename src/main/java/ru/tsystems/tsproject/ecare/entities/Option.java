@@ -39,7 +39,7 @@ public class Option implements Comparable<Option>{
     @JoinColumn(name = "tariff_id")
     private Tariff tariff;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable
             (
                     name="dependent_option",
@@ -48,7 +48,7 @@ public class Option implements Comparable<Option>{
             )
     private Set<Option> dependentOptions = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable
             (
                     name="incompatible_option",
