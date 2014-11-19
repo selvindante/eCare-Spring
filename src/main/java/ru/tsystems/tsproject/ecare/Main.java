@@ -18,10 +18,10 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
         IContractService contractService = (IContractService)context.getBean("contractService");
         IClientService clientService = (IClientService)context.getBean("clientService");
-        Contract contract = contractService.loadContract(1764l);
+        Contract contract = contractService.loadContract(1766l);
         Client client = contract.getClient();
         boolean b = client.getContracts().remove(contract);
-        contractService.deleteContract(contract.getId());
+        //contractService.deleteContract(contract.getId());
         clientService.saveOrUpdateClient(client);
 
 

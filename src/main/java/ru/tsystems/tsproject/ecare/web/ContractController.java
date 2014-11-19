@@ -89,7 +89,7 @@ public class ContractController {
         Client client = clientService.findClientByNumber(contract.getNumber());
         client.getContracts().remove(contract);
         client = clientService.saveOrUpdateClient(client);
-        contractService.deleteContract(contractId);
+        //contractService.deleteContract(contractId);
         req.setAttribute("client", client);
         req.setAttribute("pagename", PageName.CLIENT.toString());
         logger.info("User " + session.getRole() + " deleted contract with id: " + contractId + " from database.");

@@ -53,7 +53,7 @@ public class Client implements Comparable<Client>{
     @Column(name = "amount")
     private int amount = 0;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Contract> contracts = new HashSet<>();
 
     public Client() {
@@ -186,7 +186,7 @@ public class Client implements Comparable<Client>{
                 '}';
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -210,6 +210,38 @@ public class Client implements Comparable<Client>{
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + email.hashCode();
         result = 31 * result + password.hashCode();
+        return result;
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Client client = (Client) o;
+
+        if (amount != client.amount) return false;
+        if (id != client.id) return false;
+        if (address != null ? !address.equals(client.address) : client.address != null) return false;
+        if (!email.equals(client.email)) return false;
+        if (lastname != null ? !lastname.equals(client.lastname) : client.lastname != null) return false;
+        if (!name.equals(client.name)) return false;
+        if (passport != null ? !passport.equals(client.passport) : client.passport != null) return false;
+        if (!password.equals(client.password)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + name.hashCode();
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        result = 31 * result + (passport != null ? passport.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + email.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + amount;
         return result;
     }
 

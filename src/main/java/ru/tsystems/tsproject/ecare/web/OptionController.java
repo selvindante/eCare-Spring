@@ -192,7 +192,7 @@ public class OptionController {
         tariff.getOptions().remove(optionService.loadOption(Long.valueOf(req.getParameter("id"))));
         tariff = tariffService.saveOrUpdateTariff(tariff);
         long optionId = Long.valueOf(req.getParameter("id"));
-        optionService.deleteOption(optionId);
+        //optionService.deleteOption(optionId);
         logger.info("Option with id: " + optionId + " has been deleted from database.");
         req.setAttribute("tariff", tariff);
         req.setAttribute("pagename", PageName.TARIFF.toString());

@@ -29,7 +29,7 @@ public class Tariff implements Comparable<Tariff>{
     @Column(name = "price")
     private int price;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tariff", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tariff", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Option> options  = new HashSet<>();
 
     public Tariff() {

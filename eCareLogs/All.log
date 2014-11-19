@@ -1407,3 +1407,597 @@ javax.persistence.NoResultException: No entity found for query
 2014-11-19 17:26:59 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
 2014-11-19 17:26:59 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
 2014-11-19 17:26:59 INFO  ContractController:57 - New contract: Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} has created.
+2014-11-19 17:37:07 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-19 17:37:07 INFO  Version:41 - HHH000412: Hibernate Core {4.1.2.Final}
+2014-11-19 17:37:07 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-19 17:37:07 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-19 17:37:07 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:37:07 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:37:07 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:37:07 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:37:07 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:37:09 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:37:09 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:37:09 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:37:09 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:37:09 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:37:09 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-19 17:37:09 INFO  ContractService:79 - Load contract with id: 1766 from DB.
+2014-11-19 17:37:10 INFO  ContractService:87 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} loaded from DB.
+2014-11-19 17:37:10 INFO  ContractService:130 - Delete contract with id: 1766 from DB.
+2014-11-19 17:37:10 INFO  ContractService:140 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} deleted from DB.
+2014-11-19 17:37:10 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
+2014-11-19 17:37:10 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
+2014-11-19 17:49:08 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-19 17:49:08 INFO  Version:41 - HHH000412: Hibernate Core {4.1.2.Final}
+2014-11-19 17:49:08 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-19 17:49:08 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-19 17:49:08 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:49:08 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:49:08 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:49:08 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:49:08 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:49:10 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:49:10 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:49:10 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:49:10 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:49:10 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:49:10 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-19 17:49:10 INFO  ContractService:79 - Load contract with id: 1766 from DB.
+2014-11-19 17:49:11 INFO  ContractService:87 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} loaded from DB.
+2014-11-19 17:49:11 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
+2014-11-19 17:49:11 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
+2014-11-19 17:50:43 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-19 17:50:43 INFO  Version:41 - HHH000412: Hibernate Core {4.1.2.Final}
+2014-11-19 17:50:43 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-19 17:50:43 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-19 17:50:43 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:50:44 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:50:45 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:50:45 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:50:45 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:50:47 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:50:47 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:50:47 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:50:47 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:50:47 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:50:47 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-19 17:51:15 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-19 17:51:15 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-19 17:51:15 INFO  ClientService:173 - Get all clients from DB.
+2014-11-19 17:51:15 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-19 17:51:15 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-19 17:51:19 INFO  ClientService:71 - Load client with id: 3317 from DB.
+2014-11-19 17:51:19 INFO  ClientService:79 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} loaded from DB.
+2014-11-19 17:51:19 INFO  ClientController:38 - User admin went to client page.
+2014-11-19 17:51:23 INFO  ClientService:71 - Load client with id: 3317 from DB.
+2014-11-19 17:51:23 INFO  ClientService:79 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} loaded from DB.
+2014-11-19 17:51:23 INFO  ClientController:117 - User admin went to create contract page.
+2014-11-19 17:51:28 INFO  ClientService:71 - Load client with id: 3317 from DB.
+2014-11-19 17:51:28 INFO  ClientService:79 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} loaded from DB.
+2014-11-19 17:51:28 INFO  ContractController:49 - Creating of new contract with number: 9660001124.
+2014-11-19 17:51:28 INFO  ClientService:124 - Find client with telephone number: 9660001124 in DB.
+2014-11-19 17:51:28 WARN  ClientService:133 - Client with number: 9660001124 not found.
+javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.ejb.QueryImpl.getSingleResult(QueryImpl.java:290)
+	at ru.tsystems.tsproject.ecare.dao.ClientDao.findClientByNumber(ClientDao.java:41)
+	at ru.tsystems.tsproject.ecare.service.ClientService.findClientByNumber(ClientService.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:266)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy32.findClientByNumber(Unknown Source)
+	at ru.tsystems.tsproject.ecare.util.Util.checkNumberOnExisting(Util.java:155)
+	at ru.tsystems.tsproject.ecare.web.ContractController.createContract(ContractController.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:781)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:721)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:136)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:526)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:655)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2014-11-19 17:51:28 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
+2014-11-19 17:51:28 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
+2014-11-19 17:51:28 INFO  ContractController:57 - New contract: Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} has created.
+2014-11-19 17:51:39 INFO  ContractService:79 - Load contract with id: 1767 from DB.
+2014-11-19 17:51:39 INFO  ContractService:87 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} loaded from DB.
+2014-11-19 17:51:39 INFO  ContractService:325 - Block of contract by operator.
+2014-11-19 17:51:39 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
+2014-11-19 17:51:39 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
+2014-11-19 17:51:39 INFO  ContractService:332 - Contract 1767 is blocked by operator.
+2014-11-19 17:51:40 INFO  ClientService:124 - Find client with telephone number: 9660001124 in DB.
+2014-11-19 17:51:40 INFO  ClientService:136 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} found and loaded from DB.
+2014-11-19 17:51:40 INFO  ContractController:111 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=true, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} is blocked by operator.
+2014-11-19 17:51:43 INFO  ContractService:79 - Load contract with id: 1767 from DB.
+2014-11-19 17:51:43 INFO  ContractService:87 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=true, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} loaded from DB.
+2014-11-19 17:51:43 INFO  ContractService:349 - Unblock of contract by operator.
+2014-11-19 17:51:43 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
+2014-11-19 17:51:44 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
+2014-11-19 17:51:44 INFO  ContractService:356 - Contract 1767 is unblocked by operator.
+2014-11-19 17:51:44 INFO  ClientService:124 - Find client with telephone number: 9660001124 in DB.
+2014-11-19 17:51:44 INFO  ClientService:136 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} found and loaded from DB.
+2014-11-19 17:51:44 INFO  ContractController:127 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} is unblocked by operator.
+2014-11-19 17:52:01 INFO  ContractService:79 - Load contract with id: 1767 from DB.
+2014-11-19 17:52:01 INFO  ContractService:87 - Contract Contract{number=9660001124, tariff=null, isBlockedByClient=false, isBlockedByOperator=false, client=Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200}} loaded from DB.
+2014-11-19 17:52:01 INFO  ClientService:124 - Find client with telephone number: 9660001124 in DB.
+2014-11-19 17:52:01 INFO  ClientService:136 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} found and loaded from DB.
+2014-11-19 17:52:01 INFO  ClientService:47 - Save/update client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} in DB.
+2014-11-19 17:52:01 INFO  ClientService:55 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} saved/updated in DB.
+2014-11-19 17:52:01 INFO  ContractController:95 - User admin deleted contract with id: 1767 from database.
+2014-11-19 17:52:06 INFO  ClientService:173 - Get all clients from DB.
+2014-11-19 17:52:06 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-19 17:52:06 INFO  DashboardController:38 - User admin went to view dashboard page.
+2014-11-19 17:52:07 INFO  ClientService:71 - Load client with id: 3317 from DB.
+2014-11-19 17:52:07 INFO  ClientService:79 - Client Client{name='Client', lastname='Temporary', passport=1231234532, address='SPB, street, house', email='client@mail.com', password='123456', role='client', amount=200} loaded from DB.
+2014-11-19 17:52:07 INFO  ClientController:38 - User admin went to client page.
+2014-11-19 17:52:10 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-19 17:52:10 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-19 17:52:10 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-19 17:52:12 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:52:12 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:52:12 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:52:16 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:52:16 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:52:16 INFO  OptionService:70 - Load option with id: 7141 from DB.
+2014-11-19 17:52:16 INFO  OptionService:78 - Options Option{title='Answerphone', price=2, costOfConnection=120} loaded from DB.
+2014-11-19 17:52:16 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:52:16 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:52:16 INFO  OptionService:93 - Delete option with id: 7141 from DB.
+2014-11-19 17:52:16 WARN  OptionService:98 - Option with id = 7141 not exist.
+ru.tsystems.tsproject.ecare.ECareException: Option with id = 7141 not exist.
+	at ru.tsystems.tsproject.ecare.service.OptionService.deleteOption(OptionService.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:266)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy35.deleteOption(Unknown Source)
+	at ru.tsystems.tsproject.ecare.web.OptionController.deleteOption(OptionController.java:195)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:781)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:721)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:136)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:526)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:655)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2014-11-19 17:52:33 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-19 17:52:33 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-19 17:52:33 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-19 17:52:34 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:52:34 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:52:34 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:53:11 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:53:11 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:53:11 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:53:14 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:53:14 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:53:14 INFO  TariffController:93 - User admin went to create new option page.
+2014-11-19 17:53:24 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:53:24 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:53:24 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=100} in DB.
+2014-11-19 17:53:24 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=100} saved in DB.
+2014-11-19 17:53:24 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:53:24 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:53:24 INFO  OptionController:84 - New option Option{title='Answerphone', price=4, costOfConnection=100} has created.
+2014-11-19 17:53:26 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:53:26 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:53:26 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:53:50 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:53:50 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:53:50 INFO  OptionService:70 - Load option with id: 7142 from DB.
+2014-11-19 17:53:50 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=100} loaded from DB.
+2014-11-19 17:53:50 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:53:50 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:53:50 INFO  OptionService:93 - Delete option with id: 7142 from DB.
+2014-11-19 17:53:50 WARN  OptionService:98 - Option with id = 7142 not exist.
+ru.tsystems.tsproject.ecare.ECareException: Option with id = 7142 not exist.
+	at ru.tsystems.tsproject.ecare.service.OptionService.deleteOption(OptionService.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:266)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy35.deleteOption(Unknown Source)
+	at ru.tsystems.tsproject.ecare.web.OptionController.deleteOption(OptionController.java:195)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:781)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:721)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:136)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:526)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:655)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2014-11-19 17:55:50 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2014-11-19 17:55:50 INFO  Version:41 - HHH000412: Hibernate Core {4.1.2.Final}
+2014-11-19 17:55:50 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-11-19 17:55:50 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2014-11-19 17:55:50 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:55:51 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:55:52 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:55:52 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:55:52 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:55:54 INFO  Ejb3Configuration:527 - HHH000204: Processing PersistenceUnitInfo [
+	name: ECARE
+	...]
+2014-11-19 17:55:54 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2014-11-19 17:55:54 INFO  Dialect:122 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-11-19 17:55:54 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2014-11-19 17:55:54 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2014-11-19 17:55:54 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (ECARE) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2014-11-19 17:56:06 INFO  ClientService:97 - Find client with login: admin and password:admin in DB.
+2014-11-19 17:56:06 INFO  ClientService:109 - Client Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} found and loaded from DB.
+2014-11-19 17:56:06 INFO  ClientService:173 - Get all clients from DB.
+2014-11-19 17:56:06 INFO  ClientService:181 - All clients obtained from DB.
+2014-11-19 17:56:06 INFO  LoginController:60 - User(admin): Client{name='Operator', lastname='1', passport=null, address='', email='admin', password='admin', role='admin', amount=0} login in application.
+2014-11-19 17:56:10 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-19 17:56:10 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-19 17:56:10 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-19 17:56:12 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:12 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:12 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:56:17 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:17 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:17 INFO  TariffController:93 - User admin went to create new option page.
+2014-11-19 17:56:27 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:27 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:27 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 17:56:27 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 17:56:27 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:56:27 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:56:27 INFO  OptionController:84 - New option Option{title='Answerphone', price=4, costOfConnection=120} has created.
+2014-11-19 17:56:29 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:29 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:29 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:56:43 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:43 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:43 INFO  OptionService:70 - Load option with id: 7143 from DB.
+2014-11-19 17:56:43 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 17:56:43 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:56:43 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:56:43 INFO  OptionController:196 - Option with id: 7143 has been deleted from database.
+2014-11-19 17:56:43 INFO  OptionController:199 - User admin went to view tariff page.
+2014-11-19 17:56:45 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-19 17:56:45 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-19 17:56:45 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-19 17:56:46 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:46 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:46 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:56:56 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:56:56 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:56:56 INFO  TariffController:93 - User admin went to create new option page.
+2014-11-19 17:57:05 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:05 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:05 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 17:57:05 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 17:57:05 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:57:05 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:57:05 INFO  OptionController:84 - New option Option{title='Answerphone', price=4, costOfConnection=120} has created.
+2014-11-19 17:57:06 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:06 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:06 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:57:08 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:08 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:08 INFO  TariffController:93 - User admin went to create new option page.
+2014-11-19 17:57:19 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:19 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:19 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=50} in DB.
+2014-11-19 17:57:19 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=50} saved in DB.
+2014-11-19 17:57:19 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:57:19 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:57:19 INFO  OptionController:84 - New option Option{title='Answerphone2', price=5, costOfConnection=50} has created.
+2014-11-19 17:57:20 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:20 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:20 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:57:25 INFO  OptionService:70 - Load option with id: 7144 from DB.
+2014-11-19 17:57:25 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 17:57:25 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:25 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:25 INFO  OptionController:107 - User admin went to view option page.
+2014-11-19 17:57:26 INFO  OptionService:70 - Load option with id: 7144 from DB.
+2014-11-19 17:57:26 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 17:57:26 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:26 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:26 INFO  OptionController:122 - User admin went to edit option page.
+2014-11-19 17:57:34 INFO  OptionService:70 - Load option with id: 7144 from DB.
+2014-11-19 17:57:34 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 17:57:34 INFO  OptionService:70 - Load option with id: 7145 from DB.
+2014-11-19 17:57:34 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=50} loaded from DB.
+2014-11-19 17:57:34 INFO  OptionService:169 - Set dependency of option id: 7144 with option id: 7145.
+2014-11-19 17:57:34 INFO  OptionService:175 - Option id: 7145 is now dependent for option id: 7144.
+2014-11-19 17:57:34 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 17:57:34 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 17:57:34 INFO  OptionService:169 - Set dependency of option id: 7145 with option id: 7144.
+2014-11-19 17:57:34 INFO  OptionService:175 - Option id: 7144 is now dependent for option id: 7145.
+2014-11-19 17:57:34 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=50} in DB.
+2014-11-19 17:57:34 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=50} saved in DB.
+2014-11-19 17:57:34 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 17:57:34 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 17:57:34 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:34 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:34 INFO  OptionController:172 - Option Option{title='Answerphone', price=4, costOfConnection=120} has been updated.
+2014-11-19 17:57:44 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:44 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:44 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:57:50 INFO  OptionService:70 - Load option with id: 7145 from DB.
+2014-11-19 17:57:50 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=50} loaded from DB.
+2014-11-19 17:57:50 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:50 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:50 INFO  OptionController:107 - User admin went to view option page.
+2014-11-19 17:57:54 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:57:54 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:57:54 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:58:46 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:58:46 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:58:46 INFO  OptionService:70 - Load option with id: 7145 from DB.
+2014-11-19 17:58:46 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=50} loaded from DB.
+2014-11-19 17:58:46 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:58:46 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:58:46 INFO  OptionController:196 - Option with id: 7145 has been deleted from database.
+2014-11-19 17:58:46 INFO  OptionController:199 - User admin went to view tariff page.
+2014-11-19 17:58:50 INFO  TariffService:114 - Get all tariffs from DB.
+2014-11-19 17:58:50 INFO  TariffService:122 - All tariffs obtained from DB.
+2014-11-19 17:58:50 INFO  TariffsListController:36 - User admin went to view all tariffs page.
+2014-11-19 17:58:51 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:58:51 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:58:51 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:59:28 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:59:28 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:59:28 INFO  TariffController:93 - User admin went to create new option page.
+2014-11-19 17:59:37 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:59:37 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:59:37 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 17:59:37 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 17:59:37 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:59:37 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:59:37 INFO  OptionController:84 - New option Option{title='Answerphone', price=4, costOfConnection=120} has created.
+2014-11-19 17:59:40 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:59:40 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:59:40 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 17:59:42 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:59:42 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:59:42 INFO  TariffController:93 - User admin went to create new option page.
+2014-11-19 17:59:51 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:59:51 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:59:51 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=150} in DB.
+2014-11-19 17:59:51 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=150} saved in DB.
+2014-11-19 17:59:51 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 17:59:51 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 17:59:51 INFO  OptionController:84 - New option Option{title='Answerphone2', price=5, costOfConnection=150} has created.
+2014-11-19 17:59:56 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 17:59:56 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 17:59:56 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 17:59:56 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 17:59:56 INFO  OptionController:122 - User admin went to edit option page.
+2014-11-19 18:00:00 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 18:00:00 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 18:00:00 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:00:00 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:00:00 INFO  OptionService:169 - Set dependency of option id: 7147 with option id: 7146.
+2014-11-19 18:00:00 INFO  OptionService:175 - Option id: 7146 is now dependent for option id: 7147.
+2014-11-19 18:00:00 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=150} in DB.
+2014-11-19 18:00:00 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=150} saved in DB.
+2014-11-19 18:00:00 INFO  OptionService:169 - Set dependency of option id: 7146 with option id: 7147.
+2014-11-19 18:00:00 INFO  OptionService:175 - Option id: 7147 is now dependent for option id: 7146.
+2014-11-19 18:00:00 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 18:00:00 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 18:00:00 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=150} in DB.
+2014-11-19 18:00:00 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=150} saved in DB.
+2014-11-19 18:00:00 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:00 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:00 INFO  OptionController:172 - Option Option{title='Answerphone2', price=5, costOfConnection=150} has been updated.
+2014-11-19 18:00:27 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 18:00:27 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 18:00:27 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:00:27 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:00:27 INFO  OptionService:199 - Remove dependency of option id: 7147 with option id: 7146.
+2014-11-19 18:00:27 INFO  OptionService:203 - Option id: 7146 is now independent from option id: 7147.
+2014-11-19 18:00:27 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=150} in DB.
+2014-11-19 18:00:27 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=150} saved in DB.
+2014-11-19 18:00:27 INFO  OptionService:199 - Remove dependency of option id: 7146 with option id: 7147.
+2014-11-19 18:00:27 INFO  OptionService:203 - Option id: 7147 is now independent from option id: 7146.
+2014-11-19 18:00:27 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 18:00:27 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 18:00:27 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:27 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:48 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:48 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:48 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 18:00:51 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 18:00:51 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 18:00:51 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:51 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:51 INFO  OptionController:107 - User admin went to view option page.
+2014-11-19 18:00:52 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:52 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:52 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 18:00:53 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:00:53 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:00:53 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:53 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:53 INFO  OptionController:107 - User admin went to view option page.
+2014-11-19 18:00:56 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:00:56 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:00:56 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:00:56 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:00:56 INFO  OptionController:122 - User admin went to edit option page.
+2014-11-19 18:01:03 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:01:03 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:01:03 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 18:01:03 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 18:01:03 INFO  OptionService:249 - Set incompatibility of option id: 7146 with option id: 7147.
+2014-11-19 18:01:03 INFO  OptionService:255 - Option id: 7146 is now incompatible with option id: 7147.
+2014-11-19 18:01:03 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 18:01:03 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 18:01:03 INFO  OptionService:249 - Set incompatibility of option id: 7147 with option id: 7146.
+2014-11-19 18:01:03 INFO  OptionService:255 - Option id: 7147 is now incompatible with option id: 7146.
+2014-11-19 18:01:03 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=150} in DB.
+2014-11-19 18:01:03 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=150} saved in DB.
+2014-11-19 18:01:03 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 18:01:03 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 18:01:03 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:01:03 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:01:03 INFO  OptionController:172 - Option Option{title='Answerphone', price=4, costOfConnection=120} has been updated.
+2014-11-19 18:01:21 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:01:21 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:01:21 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 18:01:21 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 18:01:21 INFO  OptionService:279 - Remove incompatibility of option id: 7146 with option id: 7147.
+2014-11-19 18:01:21 INFO  OptionService:283 - Option id: 7146 is not incompatible now with option id: 7147.
+2014-11-19 18:01:21 INFO  OptionService:46 - Save/update option Option{title='Answerphone', price=4, costOfConnection=120} in DB.
+2014-11-19 18:01:21 INFO  OptionService:54 - Option Option{title='Answerphone', price=4, costOfConnection=120} saved in DB.
+2014-11-19 18:01:21 INFO  OptionService:279 - Remove incompatibility of option id: 7147 with option id: 7146.
+2014-11-19 18:01:21 INFO  OptionService:283 - Option id: 7147 is not incompatible now with option id: 7146.
+2014-11-19 18:01:21 INFO  OptionService:46 - Save/update option Option{title='Answerphone2', price=5, costOfConnection=150} in DB.
+2014-11-19 18:01:21 INFO  OptionService:54 - Option Option{title='Answerphone2', price=5, costOfConnection=150} saved in DB.
+2014-11-19 18:01:21 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:01:21 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:01:34 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:01:34 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:01:34 INFO  TariffController:63 - User admin went to view tariff page.
+2014-11-19 18:01:37 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:01:37 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:01:37 INFO  OptionService:70 - Load option with id: 7147 from DB.
+2014-11-19 18:01:37 INFO  OptionService:78 - Options Option{title='Answerphone2', price=5, costOfConnection=150} loaded from DB.
+2014-11-19 18:01:37 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 18:01:37 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 18:01:37 INFO  OptionController:196 - Option with id: 7147 has been deleted from database.
+2014-11-19 18:01:37 INFO  OptionController:199 - User admin went to view tariff page.
+2014-11-19 18:01:39 INFO  TariffService:70 - Load tariff with id: 2048 from DB.
+2014-11-19 18:01:39 INFO  TariffService:78 - Tariff Tariff{title='Spring', price=200} loaded from DB.
+2014-11-19 18:01:39 INFO  OptionService:70 - Load option with id: 7146 from DB.
+2014-11-19 18:01:39 INFO  OptionService:78 - Options Option{title='Answerphone', price=4, costOfConnection=120} loaded from DB.
+2014-11-19 18:01:39 INFO  TariffService:46 - Save/update tariff Tariff{title='Spring', price=200} in DB.
+2014-11-19 18:01:39 INFO  TariffService:54 - Tariff Tariff{title='Spring', price=200} saved in DB.
+2014-11-19 18:01:39 INFO  OptionController:196 - Option with id: 7146 has been deleted from database.
+2014-11-19 18:01:39 INFO  OptionController:199 - User admin went to view tariff page.
