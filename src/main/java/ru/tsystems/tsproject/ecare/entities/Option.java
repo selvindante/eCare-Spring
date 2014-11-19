@@ -140,6 +140,7 @@ public class Option implements Comparable<Option>{
         Option option = (Option) o;
 
         if (costOfConnection != option.costOfConnection) return false;
+        if (id != option.id) return false;
         if (price != option.price) return false;
         if (title != null ? !title.equals(option.title) : option.title != null) return false;
 
@@ -148,7 +149,8 @@ public class Option implements Comparable<Option>{
 
     @Override
     public int hashCode() {
-        int result = title != null ? title.hashCode() : 0;
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + price;
         result = 31 * result + costOfConnection;
         return result;

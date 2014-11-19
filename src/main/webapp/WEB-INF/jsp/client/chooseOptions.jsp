@@ -47,7 +47,7 @@
         </p>
         <br>
             <form method="post" action="setNewTariff" enctype="application/x-www-form-urlencoded">
-                <input type="hidden" name="id" value=${contract.id}>
+                <input type="hidden" name="contractId" value=${contract.id}>
                 <input type="hidden" name="tariffId" value=${tariff.id}>
                 <input type="hidden" name="sessionRole" value=${session.role}>
                 <input type="hidden" name="sessionStatus" value=${session.isOn()}>

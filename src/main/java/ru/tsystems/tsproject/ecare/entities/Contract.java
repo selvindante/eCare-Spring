@@ -135,7 +135,7 @@ public class Contract implements Comparable<Contract>{
                 '}';
     }
 
-    @Override
+/*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -152,6 +152,30 @@ public class Contract implements Comparable<Contract>{
     @Override
     public int hashCode() {
         int result = (int) (number ^ (number >>> 32));
+        result = 31 * result + (isBlockedByClient ? 1 : 0);
+        result = 31 * result + (isBlockedByOperator ? 1 : 0);
+        return result;
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Contract contract = (Contract) o;
+
+        if (id != contract.id) return false;
+        if (isBlockedByClient != contract.isBlockedByClient) return false;
+        if (isBlockedByOperator != contract.isBlockedByOperator) return false;
+        if (number != contract.number) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (int) (number ^ (number >>> 32));
         result = 31 * result + (isBlockedByClient ? 1 : 0);
         result = 31 * result + (isBlockedByOperator ? 1 : 0);
         return result;

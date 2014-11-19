@@ -204,7 +204,6 @@ public class ContractController {
         req.setAttribute("session", session);
         Contract contract = contractService.loadContract(contractId);
         try {
-            tariffId = Long.valueOf(req.getParameter("tariffId"));
             Tariff tariff = tariffService.loadTariff(tariffId);
             contractService.setTariff(contract, tariff);
 

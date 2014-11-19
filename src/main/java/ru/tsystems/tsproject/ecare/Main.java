@@ -2,10 +2,10 @@ package ru.tsystems.tsproject.ecare;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tsystems.tsproject.ecare.entities.Option;
-import ru.tsystems.tsproject.ecare.service.IOptionService;
-
-import java.util.List;
+import ru.tsystems.tsproject.ecare.entities.Client;
+import ru.tsystems.tsproject.ecare.entities.Contract;
+import ru.tsystems.tsproject.ecare.service.IClientService;
+import ru.tsystems.tsproject.ecare.service.IContractService;
 
 /**
  * Created by Selvin
@@ -16,9 +16,14 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
-        IOptionService optionService = (IOptionService)context.getBean("optionService");
-        List<Option> options = optionService.getAllOptionsForTariff(2047l);
-        Option option = optionService.loadOption(7131l);
+        IContractService contractService = (IContractService)context.getBean("contractService");
+        IClientService clientService = (IClientService)context.getBean("clientService");
+        Contract contract = contractService.loadContract(1764l);
+        Client client = contract.getClient();
+        boolean b = client.getContracts().remove(contract);
+        contractService.deleteContract(contract.getId());
+        clientService.saveOrUpdateClient(client);
+
 
 
         /*IClientService clientService = (IClientService) context.getBean("clientService");
