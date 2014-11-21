@@ -23,13 +23,17 @@ public class OptionService implements IOptionService {
     /*SQL option implementations of DAO class*/
     private OptionDao opDao;
 
+    /*Tariff service instance for some methods of working with that service*/
+    private final ITariffService tariffService;
+
     /*Logger for option service operations*/
     private static Logger logger = Logger.getLogger(OptionService.class);
 
     /*Constructor of Client Service class*/
     @Autowired
-    public OptionService(OptionDao opDAO) {
+    public OptionService(OptionDao opDAO, ITariffService tariffService) {
         this.opDao = opDAO;
+        this.tariffService = tariffService;
     }
 
     /**
@@ -312,5 +316,45 @@ public class OptionService implements IOptionService {
         // Remove all incompatible options for current option.
         currentOption.getIncompatibleOptions().clear();
         logger.info("All incompatible options removed from option id: " + currentOption.getId() + ".");
+    }
+
+    /**
+     * This method creates new option for tariff with set of dependent and incompatible options if they exists.
+     *
+     * @param option Option entity.
+     * @param dependentOptionsArray Array of dependent options, can be null.
+     * @param incompatibleOptionsArray Array of incompatible options, can be null.
+     * @return created option in database.
+     */
+    @Override
+    @Transactional
+    public Option createDependencies(Option option, String dependentOptionsArray[], String incompatibleOptionsArray[]) {
+        //Set dependent options if exists for current option.
+        long dependentOptionId = 0;
+        Option dependentOption = null;
+        if(dependentOptionsArray != null) {
+            List<String> dependentOptionsId = Arrays.asList(dependentOptionsArray);
+            for(String stringId: dependentOptionsId) {
+                dependentOptionId = Long.valueOf(stringId);
+                dependentOption = loadOption(dependentOptionId);
+                setDependentOption(option, dependentOption);
+                setDependentOption(dependentOption, option);
+            }
+        }
+        //Set incompatible options if exists for current option.
+        long incompatibleOptionId = 0;
+        Option incompatibleOption = null;
+        if(incompatibleOptionsArray != null) {
+            List<String> incompatibleOptionsId = Arrays.asList(incompatibleOptionsArray);
+            for (String stringId : incompatibleOptionsId) {
+                incompatibleOptionId = Long.valueOf(stringId);
+                incompatibleOption = loadOption(incompatibleOptionId);
+                setIncompatibleOption(option, incompatibleOption);
+                setIncompatibleOption(incompatibleOption, option);
+            }
+        }
+        //Updating of option in DB.
+        option = saveOrUpdateOption(option);
+        return option;
     }
 }

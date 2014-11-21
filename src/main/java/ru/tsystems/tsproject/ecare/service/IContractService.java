@@ -149,6 +149,7 @@ public interface IContractService {
      *
      * @param contract contract entity in which must be set option.
      * @param tariff tariff entity which must be set in contract
+     * @return contract entity with established tariff and options.
      */
-    public void setTariff(Contract contract, Tariff tariff);
+    public Contract setTariff(Contract contract, Tariff tariff, String chosenOptionsArray[]);
 }

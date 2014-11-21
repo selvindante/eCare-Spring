@@ -9,6 +9,7 @@ import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
+import ru.tsystems.tsproject.ecare.util.ControllerUtil;
 import ru.tsystems.tsproject.ecare.util.PageName;
 import ru.tsystems.tsproject.ecare.util.Util;
 
@@ -28,38 +29,29 @@ public class ClientController {
     @RequestMapping(value = "/viewClient", method = RequestMethod.POST)
     public String viewClient(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
         req.setAttribute("pagename", PageName.CLIENT.toString());
-        logger.info("User " + session.getRole() + " went to client page.");
+        logger.info("User " + Session.getInstance().getRole() + " went to client page.");
         return "client/client";
     }
 
     @RequestMapping(value = "/editClient", method = RequestMethod.POST)
     public String editClient(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
         req.setAttribute("pagename", PageName.EDIT_CLIENT.toString());
-        logger.info("User " + session.getRole() + " went to edit client page.");
+        logger.info("User " + Session.getInstance().getRole() + " went to edit client page.");
         return "client/editClient";
     }
 
     @RequestMapping(value = "/updateClient", method = RequestMethod.POST)
     public String updateClient(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         Client client = clientService.loadClient(clientId);
         try {
             client.setName(Util.checkStringLength(Util.checkStringOnEmpty(req.getParameter("name"))));
@@ -74,6 +66,7 @@ public class ClientController {
             logger.info("Personal info of client " + client + " updated.");
             return "client/client";
         } catch (ECareException ecx) {
+            req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.EDIT_CLIENT.toString());
             req.setAttribute("errormessage", ecx.getMessage());
             return "client/editClient";
@@ -83,10 +76,7 @@ public class ClientController {
     @RequestMapping(value = "/addAmount", method = RequestMethod.POST)
     public String addAmount(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         Client client = clientService.loadClient(clientId);
         try {
             int amount = Util.checkInt(req.getParameter("amount"));
@@ -95,9 +85,10 @@ public class ClientController {
             req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
             req.setAttribute("successmessage", "Amount " + amount + " added to balance of client " + client.getFullName() + ".");
-            logger.info("User " + session.getRole() + " added amount to balance of client " + client + ".");
+            logger.info("User " + Session.getInstance().getRole() + " added amount to balance of client " + client + ".");
             return "client/client";
         } catch (ECareException ecx) {
+            req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
             req.setAttribute("errormessage", ecx.getMessage());
             return "client/client";
@@ -107,14 +98,11 @@ public class ClientController {
     @RequestMapping(value = "/newContract", method = RequestMethod.POST)
     public String newContract(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
+        ControllerUtil.setSession(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
-        req.setAttribute("session", session);
         req.setAttribute("pagename", PageName.NEW_CONTRACT.toString());
-        logger.info("User " + session.getRole() + " went to create contract page.");
+        logger.info("User " + Session.getInstance().getRole() + " went to create contract page.");
         return "client/createContract";
     }
 }

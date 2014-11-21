@@ -73,6 +73,7 @@ public class LoginController {
         session.setOn(false);
         req.setAttribute("session", session);
         logger.info("User has logout from application.");
+        req.setAttribute("successmessage", "User has logout from system.");
         return "login";
     }
 }

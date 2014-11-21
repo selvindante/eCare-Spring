@@ -99,6 +99,10 @@ public class Option implements Comparable<Option>{
         return tariff;
     }
 
+    public void setTariff(Tariff tariff) {
+        this.tariff = tariff;
+    }
+
     public Set<Option> getDependentOptions() {
         return dependentOptions;
     }

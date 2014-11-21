@@ -9,6 +9,7 @@ import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
+import ru.tsystems.tsproject.ecare.util.ControllerUtil;
 import ru.tsystems.tsproject.ecare.util.PageName;
 import ru.tsystems.tsproject.ecare.util.Util;
 
@@ -28,32 +29,26 @@ public class DashboardController {
 
     @RequestMapping(value = "/viewDashboard", method = RequestMethod.POST)
     public String viewDashboard(HttpServletRequest req) {
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         List<Client> clientsList = clientService.getAllClients();
         req.setAttribute("clientsList", clientsList);
         req.setAttribute("pagename", PageName.DASHBOARD.toString());
-        logger.info("User " + session.getRole() + " went to view dashboard page.");
+        logger.info("User " + Session.getInstance().getRole() + " went to view dashboard page.");
         return "operator/dashboard";
     }
 
     @RequestMapping(value = "/searchClientByNumber", method = RequestMethod.POST)
     public String searchClientByNumber(HttpServletRequest req) {
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         List<Client> clientsList = null;
         try {
             long number = Util.checkLong(req.getParameter("number"));
-            logger.info("User " + session.getRole() + " searching of client by number " + number + ".");
+            logger.info("User " + Session.getInstance().getRole() + " searching of client by number " + number + ".");
             Client client = clientService.findClientByNumber(number);
             req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
             req.setAttribute("successmessage", "Client " + client.getName() + " found and loaded from database.");
-            logger.info("User " + session.getRole() + " went to client page.");
+            logger.info("User " + Session.getInstance().getRole() + " went to client page.");
             return "client/client";
         } catch (ECareException ecx) {
             clientsList = clientService.getAllClients();
@@ -66,17 +61,24 @@ public class DashboardController {
 
     @RequestMapping(value = "/deleteClient", method = RequestMethod.POST)
     public String deleteClient(HttpServletRequest req) {
-        Session session = Session.getInstance();
-        session.setRole(req.getParameter("sessionRole"));
-        session.setOn(Boolean.valueOf(req.getParameter("sessionStatus")));
-        req.setAttribute("session", session);
+        ControllerUtil.setSession(req);
         long clientId = Long.valueOf(req.getParameter("id"));
-        clientService.deleteClient(clientId);
-        logger.info("User " + session.getRole() + " deleted are client with id:" + clientId + " from database.");
-        List<Client> clientsList  = clientService.getAllClients();
-        req.setAttribute("clientsList", clientsList);
-        req.setAttribute("pagename", PageName.DASHBOARD.toString());
-        logger.info("User " + session.getRole() + " went to view dashboard page.");
-        return "operator/dashboard";
+        List<Client> clientsList = null;
+        try{
+            clientService.deleteClient(clientId);
+            logger.info("User " + Session.getInstance().getRole() + " deleted are client with id:" + clientId + " from database.");
+            clientsList  = clientService.getAllClients();
+            req.setAttribute("successmessage", "Client with id: " + clientId + " deleted from database.");
+            req.setAttribute("clientsList", clientsList);
+            req.setAttribute("pagename", PageName.DASHBOARD.toString());
+            logger.info("User " + Session.getInstance().getRole() + " went to view dashboard page.");
+            return "operator/dashboard";
+        }catch (ECareException ecx) {
+            clientsList = clientService.getAllClients();
+            req.setAttribute("clientsList", clientsList);
+            req.setAttribute("pagename", PageName.DASHBOARD.toString());
+            req.setAttribute("errormessage", ecx.getMessage());
+            return "operator/dashboard";
+        }
     }
 }

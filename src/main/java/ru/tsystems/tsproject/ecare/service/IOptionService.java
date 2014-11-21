@@ -111,4 +111,14 @@ public interface IOptionService {
      * @param currentOption current option entity.
      */
     public void clearIncompatibleOptions(Option currentOption);
+
+    /**
+     * This method creates new option for tariff with set of dependent and incompatible options if they exists.
+     *
+     * @param option Option entity.
+     * @param dependentOptionsArray Array of dependent options, can be null.
+     * @param incompatibleOptionsArray Array of incompatible options, can be null.
+     * @return created option
+     */
+    public Option createDependencies(Option option, String dependentOptionsArray[], String incompatibleOptionsArray[]);
 }

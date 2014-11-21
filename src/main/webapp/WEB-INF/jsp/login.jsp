@@ -33,6 +33,21 @@
 
         </c:if>
 
+        <c:if test="${successmessage != null}">
+            <div class="inner-wrapper-success" id="success">
+                <p>
+                    Success: ${successmessage}
+                </p>
+            </div>
+
+            <SCRIPT language="javascript">
+                setInterval(function() {
+                    $("#success").attr("hidden", true);
+                }, 5000);
+            </SCRIPT>
+
+        </c:if>
+
         <div class="inner-wrapper" style="padding-left: 100px">
                 <form method="post" action="/loginUser" enctype="application/x-www-form-urlencoded">
                     <input type="hidden" name="action" value="login">

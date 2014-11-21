@@ -34,12 +34,13 @@
                 <input type="hidden" name="id" value="${tariff.id}">
                 <input type="hidden" name="sessionRole" value=${session.role}>
                 <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-                Available options list: <a class="inline-link-add" title="Create new option" href="#" onclick="document.getElementById('formId4').submit()"></a>
             </form>
+
+        Available options list:
 
             <c:choose>
                 <c:when test="${tariff.getOptions().size() != 0}">
-
+                    <a class="inline-link-add" title="Create new option" href="#" onclick="document.getElementById('formId4').submit()"></a>
                     </p>
                     <br>
                     <table>
@@ -98,7 +99,7 @@
                     </table>
                 </c:when>
                 <c:otherwise>
-                    empty.
+                    empty. <a class="inline-link-add" title="Create new option" href="#" onclick="document.getElementById('formId4').submit()"></a>
                 </c:otherwise>
             </c:choose>
 

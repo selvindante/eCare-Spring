@@ -13,6 +13,7 @@ import ru.tsystems.tsproject.ecare.entities.Tariff;
 
 import javax.persistence.NoResultException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,14 +32,18 @@ public class ContractService implements IContractService {
     /*Client service instance for some methods of working with client amount in contract service*/
     private final IClientService clientService;
 
+    /*Option service instance for some methods of working with option service*/
+    private final IOptionService optionService;
+
     /*Logger for contract service operations*/
     private static Logger logger = Logger.getLogger(ContractService.class);
 
     /*Constructor of Contract Service class*/
     @Autowired
-    public ContractService(ContractDao cnDAO, IClientService clientService) {
+    public ContractService(ContractDao cnDAO, IClientService clientService, IOptionService optionService) {
         this.cnDao = cnDAO;
         this.clientService = clientService;
+        this.optionService = optionService;
     }
 
     /**
@@ -464,9 +469,10 @@ public class ContractService implements IContractService {
      *
      * @param contract contract entity in which must be set option.
      * @param tariff tariff entity which must be set in contract
+     * @return contract Contract with established tariff and options.
      */
     @Override
-    public void setTariff(Contract contract, Tariff tariff) {
+    public Contract setTariff(Contract contract, Tariff tariff, String chosenOptionsArray[]) {
         logger.info("Set tariff: " + tariff.getId() + " in contract id: " + contract.getId() + ".");
         // Get current tariff from contract.
         Tariff currentTariff = contract.getTariff();
@@ -482,5 +488,20 @@ public class ContractService implements IContractService {
         // Updating of client.
         clientService.saveOrUpdateClient(client);
         logger.info("Tariff: " + tariff.getId() + " is set in contract id: " + contract.getId() + ".");
+        // Clear old options in contract and set new options
+        contract.getOptions().clear();
+        if(chosenOptionsArray != null) {
+            List<String> optionsId = Arrays.asList(chosenOptionsArray);
+            long optionId;
+            Option option = null;
+            for(String stringId: optionsId) {
+                optionId = Long.valueOf(stringId);
+                option = optionService.loadOption(optionId);
+                contract = enableOption(contract, option);
+            }
+        }
+        //Updating of contract in DB.
+        contract = saveOrUpdateContract(contract);
+        return contract;
     }
 }
