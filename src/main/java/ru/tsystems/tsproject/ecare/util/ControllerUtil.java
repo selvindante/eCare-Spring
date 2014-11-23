@@ -1,6 +1,7 @@
 package ru.tsystems.tsproject.ecare.util;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.service.ITariffService;
@@ -17,8 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 public class ControllerUtil {
 
     /*Tariff service instance*/
-    @Autowired
-    private static ITariffService tariffService;
+    private static ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource-test.xml"});
+    private static ITariffService tariffService = (ITariffService) context.getBean("tariffService");
 
     /**
      * Method checks session of user and set it as attribute of request.

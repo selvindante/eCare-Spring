@@ -2,10 +2,8 @@ package ru.tsystems.tsproject.ecare;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tsystems.tsproject.ecare.entities.Client;
-import ru.tsystems.tsproject.ecare.entities.Contract;
 import ru.tsystems.tsproject.ecare.service.IClientService;
-import ru.tsystems.tsproject.ecare.service.IContractService;
+import ru.tsystems.tsproject.ecare.util.Util;
 
 /**
  * Created by Selvin
@@ -16,17 +14,27 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
-        IContractService contractService = (IContractService)context.getBean("contractService");
         IClientService clientService = (IClientService)context.getBean("clientService");
-        Contract contract = contractService.loadContract(1766l);
-        Client client = contract.getClient();
-        boolean b = client.getContracts().remove(contract);
-        //contractService.deleteContract(contract.getId());
-        clientService.saveOrUpdateClient(client);
+        /*Client c1 = clientService.findClientByNumber(9210001122l);
+        Client c2 = clientService.findClientByNumber(9210001123l);*/
+        long num1 = Util.checkNumberOnExisting("9210001122");
+        long num2 = Util.checkNumberOnExisting("9210001123");
+        //boolean b = clientService.existLogin("client@mail.com");
+        //long l = Util.checkNumberOnExisting("9210001122");
 
 
-
-        /*IClientService clientService = (IClientService) context.getBean("clientService");
-        System.out.println(clientService.saveOrUpdateClient(new Client("trololo", "lolo", new Date(0l), 12345678l, "Spb", "client", "123456", "client", 0)));*/
+        /*try {
+            long number = Util.checkLong("9210001122");
+            try {
+                clientService.findClientByNumber(number);
+            } catch (ECareException ecx) {
+                System.out.println("Not EXIST!!!");
+            }
+            ECareException ecx = new ECareException("Entered telephone number already exist.");
+            throw ecx;
+        } catch (NumberFormatException nfx) {
+            ECareException ecx = new ECareException("Wrong format of entered telephone number.", nfx);
+            throw ecx;
+        }*/
     }
 }

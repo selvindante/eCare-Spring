@@ -26,7 +26,12 @@ public class LoginController {
     @Autowired
     IClientService clientService;
 
-    @RequestMapping(value = "/showLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/backToLogin", method = RequestMethod.POST)
+    public String backToLogin() {
+        return "login";
+    }
+
+    @RequestMapping(value = "/showLogin", method = RequestMethod.GET)
     public String showLogin() {
         return "login";
     }

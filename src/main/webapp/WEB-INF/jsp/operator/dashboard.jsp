@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="ru.tsystems.tsproject.ecare.entities.Client" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="true"%>
 <html>
 
 <head>

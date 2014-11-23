@@ -1,0 +1,74 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+                 http://www.springframework.org/schema/security 
+                 http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+
+    <http access-denied-page="/login.jsp">
+        <intercept-url pattern="/showLogin*" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/backToLogin*" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/loginUser*" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/logoutUser*" access="ROLE_ADMIN,ROLE_USER"/>
+
+        <intercept-url pattern="/registration*" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/addClient*" access="ROLE_ANONYMOUS"/>
+
+        <intercept-url pattern="/viewClient*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/editClient*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/updateClient*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/addAmount*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/newContract*" access="ROLE_ADMIN"/>
+
+        <intercept-url pattern="/createContract*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/viewContract*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/deleteClient*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/blockByOperator*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/unblockByOperator*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/blockByClient*" access="ROLE_USER"/>
+        <intercept-url pattern="/unblockByClient*" access="ROLE_USER"/>
+        <intercept-url pattern="/changeTariff*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/chooseTariff*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/setNewTariff*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/setNewTariff*" access="ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/setNewTariff*" access="ROLE_ADMIN,ROLE_USER"/>
+
+        <intercept-url pattern="/viewDashboard*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/searchClientByNumber*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/deleteClient*" access="ROLE_ADMIN"/>
+
+        <intercept-url pattern="/viewAllTariffs*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/newTariff*" access="ROLE_ADMIN"/>
+
+        <intercept-url pattern="/createTariff*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/viewTariff*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/deleteTariff*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/newOption*" access="ROLE_ADMIN"/>
+
+        <intercept-url pattern="/createOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/viewOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/editOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/updateOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/deleteOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/removeDependentOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/removeAllDependentOptions*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/removeIncompatibleOption*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/removeAllIncompatibleOptions*" access="ROLE_ADMIN"/>
+
+        <form-login login-page="/login" authentication-failure-url="/login.jsp?errormessage=true"/>
+        <logout logout-url="/logoutUser" logout-success-url="/showLogin"/>
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="admin" authorities="ROLE_ADMIN,ROLE_USER"/>
+                <user name="client@mail.com" password="123456" authorities="ROLE_USER"/>
+            </user-service>
+            <password-encoder hash="md5" />
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>

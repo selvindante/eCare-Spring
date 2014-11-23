@@ -126,7 +126,7 @@ public class ClientService implements IClientService {
         try {
             // Search of client in the database by DAO method.
             cl = clDao.findClientByNumber(number);
-            // If client does not exist in database, block try catches the NoResultException and
+            // If client does not exist in database, block "catch" catches the NoResultException and
             // throws an ECareException.
         } catch(NoResultException nrx) {
             ECareException ecx = new ECareException("Client with number: " + number + " not found.", nrx);
