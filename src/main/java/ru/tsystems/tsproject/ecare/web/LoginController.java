@@ -5,12 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ru.tsystems.tsproject.ecare.ECareException;
+import org.springframework.web.servlet.ModelAndView;
 import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
-import ru.tsystems.tsproject.ecare.util.PageName;
-import ru.tsystems.tsproject.ecare.util.Util;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -36,7 +34,7 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
     public String loginUser(HttpServletRequest req) {
         Session session = Session.getInstance();
         try {
@@ -70,6 +68,20 @@ public class LoginController {
             return "login";
         }
         return "login";
+    }*/
+
+    @RequestMapping(value = "/loginUser", method = RequestMethod.GET)
+     public ModelAndView loginUser() {
+        Session session = Session.getInstance();
+        ModelAndView model = new ModelAndView();
+        List<Client> clientsList = clientService.getAllClients();
+        session.setRole("admin");
+        session.setOn(true);
+        model.addObject("session", session);
+        model.addObject("clientsList", clientsList);
+        model.addObject("successmessage", "Administrator session started.");
+        model.setViewName("operator/dashboard");
+        return model;
     }
 
     @RequestMapping(value = "/logoutUser", method = RequestMethod.POST)

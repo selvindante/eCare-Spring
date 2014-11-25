@@ -6,10 +6,19 @@
 </head>
 <body>
 
-    <form id="h3ExitForm" method="post" action="logoutUser" enctype="application/x-www-form-urlencoded">
+    <c:url value="/j_spring_security_logout" var="logoutUrl" />
+
+    <form id="logoutForm" method="post" action="${logoutUrl}" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="sessionRole" value=${session.role}>
         <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>
+
+    <%--<script>
+        function formSubmit() {
+            document.getElementById("logoutForm").submit();
+        }
+    </script>--%>
 
     <form id="h3TariffsForm" method="post" action="viewAllTariffs" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="sessionRole" value=${session.role}>
@@ -48,7 +57,7 @@
 
     <h3>
         <div class="h3-logo"></div>
-        <a href="#" onclick="document.getElementById('h3ExitForm').submit()" class="h3-link" style="border-right-color: rgb(234, 234, 234)">EXIT</a>
+        <a href="#" onclick="document.getElementById('logoutForm').submit()" class="h3-link" style="border-right-color: rgb(234, 234, 234)">EXIT</a>
 
         <c:if test="${session.role == 'admin'}">
 
