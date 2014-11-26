@@ -1,7 +1,7 @@
 <%@ page import="ru.tsystems.tsproject.ecare.Session" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page session="true"%>
+<%@ page session="true"%>
 <html>
 
 <head>
@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 
-<body>
+<body  onload='document.loginForm.username.focus();'>
 
     <div class="outer-wrapper clearfix">
 

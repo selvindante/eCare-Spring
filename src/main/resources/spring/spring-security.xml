@@ -7,32 +7,53 @@
                  http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
      <!--enable use-expressions-->
-    <http auto-config="true" use-expressions="true">
+    <!--<http auto-config="true" use-expressions="true">
+        <intercept-url pattern="/index*" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')"/>
+        <intercept-url pattern="/login*" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')"/>
+        <intercept-url pattern="/showLogin*" access="hasAnyRole('ROLE_ADMIN,ROLE_USER')"/>
 
-        <intercept-url pattern="/loginUser" access="hasRole('ROLE_ADMIN')" />
-
-        <!-- access denied page -->
-        <access-denied-handler error-page="/login" />
+        &lt;!&ndash; access denied page &ndash;&gt;
+        &lt;!&ndash;<access-denied-handler error-page="/login" />&ndash;&gt;
 
         <form-login
                 login-page="/login"
                 default-target-url="/loginUser"
                 authentication-failure-url="/showLogin"
+                always-use-default-target="true"
                 username-parameter="username"
                 password-parameter="password" />
         <logout logout-success-url="/logoutUser"  />
-        <!-- enable csrf protection -->
+        &lt;!&ndash; enable csrf protection &ndash;&gt;
         <csrf/>
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS" />
+    </http>-->
+
+    <http auto-config="true" use-expressions="true">
+        <!--<intercept-url pattern="/index*" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')"/>
+        <intercept-url pattern="/login*" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')"/>-->
+        <intercept-url pattern="/loginUser" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+
+        <access-denied-handler error-page="/showLogin" />
+        <form-login
+                login-page="/login"
+                default-target-url="/loginUser"
+                always-use-default-target="true"
+                authentication-failure-url="/showLogin"
+                username-parameter="username"
+                password-parameter="password"/>
+        <logout logout-success-url="/logoutUser" />
+        <csrf/>
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS" />
     </http>
 
-    <authentication-manager>
+    <authentication-manager erase-credentials="false">
         <authentication-provider>
             <jdbc-user-service data-source-ref="dataSource"
                                users-by-username-query=
                                        "select email, password, enabled from client where email=?"
                                authorities-by-username-query=
-                                       "select email, role from client where email =?  " />
-            <password-encoder hash="md5" />
+                                       "select email, role from client where email =?" />
+            <!--<password-encoder hash="md5" />-->
         </authentication-provider>
     </authentication-manager>
 

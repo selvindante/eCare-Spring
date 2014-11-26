@@ -48,8 +48,7 @@
 
                                     <form id="formId2${client.id}" method="post" action="viewClient" enctype="application/x-www-form-urlencoded">
                                         <input type="hidden" name="id" value=${client.id}>
-                                        <input type="hidden" name="sessionRole" value=${session.role}>
-                                        <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                                        <input type="hidden" name="sessionRole" value=${role}>
                                         <a class="inline-link" href="#" onclick="document.getElementById('formId2${client.id}').submit()">${client.id}</a>
                                     </form>
 
@@ -67,8 +66,7 @@
 
                                     <form id="formId3${client.id}" method="post" action="deleteClient" enctype="application/x-www-form-urlencoded">
                                         <input type="hidden" name="id" value=${client.id}>
-                                        <input type="hidden" name="sessionRole" value=${session.role}>
-                                        <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                                        <input type="hidden" name="sessionRole" value=${role}>
                                         <a class="inline-link-delete" title="Delete client" href="#" onclick="document.getElementById('formId3${client.id}').submit()"></a>
                                     </form>
 

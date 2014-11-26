@@ -2,15 +2,21 @@ package ru.tsystems.tsproject.ecare.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
+import ru.tsystems.tsproject.ecare.util.PageName;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -24,6 +30,15 @@ public class LoginController {
     @Autowired
     IClientService clientService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView defaultPage() {
+
+        ModelAndView model = new ModelAndView();
+        model.setViewName("login");
+        return model;
+
+    }
+
     @RequestMapping(value = "/backToLogin", method = RequestMethod.POST)
     public String backToLogin() {
         return "login";
@@ -34,33 +49,29 @@ public class LoginController {
         return "login";
     }
 
-    /*@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/loginUser", method = RequestMethod.GET)
     public String loginUser(HttpServletRequest req) {
-        Session session = Session.getInstance();
+        String role = null;
+        Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>)SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        for (GrantedAuthority authority : authorities) {
+            role = authority.getAuthority();
+        }
+        req.setAttribute("role", role);
         try {
-            String login = Util.checkStringLength(req.getParameter("login"));
-            String password = Util.checkStringLength(req.getParameter("password"));
-            Client client = clientService.findClient(login, password);
-            req.setAttribute("role", client.getRole());
-            if(client.getRole().equals("client")) {
-                session.setRole("client");
-                session.setOn(true);
-                req.setAttribute("session", session);
+            if (role.equals("ROLE_USER")) {
+                UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                Client client = clientService.findClient(userDetails.getUsername(), userDetails.getPassword());
                 req.setAttribute("client", client);
                 req.setAttribute("pagename", PageName.CLIENT.toString());
                 req.setAttribute("successmessage", "Client " + client.getName() + " loaded from database.");
                 logger.info("User(client): " + client + " login in application.");
                 return "client/client";
-            }
-            else if(client.getRole().equals("admin")){
+            } else if (role.equals("ROLE_ADMIN")) {
                 List<Client> clientsList = clientService.getAllClients();
-                session.setRole("admin");
-                session.setOn(true);
-                req.setAttribute("session", session);
                 req.setAttribute("clientsList", clientsList);
                 req.setAttribute("pagename", PageName.DASHBOARD.toString());
                 req.setAttribute("successmessage", "Administrator session started.");
-                logger.info("User(admin): " + client + " login in application.");
+                logger.info("User(admin) logged in application.");
                 return "operator/dashboard";
             }
         } catch (ECareException ecx) {
@@ -68,20 +79,6 @@ public class LoginController {
             return "login";
         }
         return "login";
-    }*/
-
-    @RequestMapping(value = "/loginUser", method = RequestMethod.GET)
-     public ModelAndView loginUser() {
-        Session session = Session.getInstance();
-        ModelAndView model = new ModelAndView();
-        List<Client> clientsList = clientService.getAllClients();
-        session.setRole("admin");
-        session.setOn(true);
-        model.addObject("session", session);
-        model.addObject("clientsList", clientsList);
-        model.addObject("successmessage", "Administrator session started.");
-        model.setViewName("operator/dashboard");
-        return model;
     }
 
     @RequestMapping(value = "/logoutUser", method = RequestMethod.POST)
