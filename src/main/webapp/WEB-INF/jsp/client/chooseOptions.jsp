@@ -152,7 +152,7 @@
         </c:choose>
     </div>
 
-    <c:if test="${options.size() != 0}">
+    <%--<c:if test="${options.size() != 0}">
 
         <div class="inner-wrapper-info">
 
@@ -211,7 +211,7 @@
 
         </div>
 
-    </c:if>
+    </c:if>--%>
 
     <jsp:include page="../fragments/footer.jsp"></jsp:include>
 

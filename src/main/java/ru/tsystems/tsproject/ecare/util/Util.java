@@ -26,6 +26,15 @@ public class Util {
     private static Logger logger = Logger.getLogger(Util.class);
 
     /**
+     * Method can set client service object with another application context for tests.
+     *
+     * @param clientService service object.
+     */
+    public static void setClientService(IClientService clientService) {
+        Util.clientService = clientService;
+    }
+
+    /**
      * Method checks string on length. Must be less than 60 symbols (in this app).
      *
      * @param s input string.

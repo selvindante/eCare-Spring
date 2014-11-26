@@ -1,11 +1,8 @@
 package ru.tsystems.tsproject.ecare.util;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import ru.tsystems.tsproject.ecare.service.ITariffService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
@@ -18,10 +15,6 @@ import java.util.Collection;
 
 @Component
 public class ControllerUtil {
-
-    /*Tariff service instance*/
-    private static ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
-    private static ITariffService tariffService = (ITariffService) context.getBean("tariffService");
 
     /**
      * Method checks session of user and set it as attribute of request.

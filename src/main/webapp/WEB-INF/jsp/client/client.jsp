@@ -164,7 +164,7 @@
                                             </form:form>
 
                                     </c:when>
-                                    <c:when test="${role == 'ROLE_ADMIN' && contract.isBlockedByOperator() == false}">
+                                    <c:when test="${role == 'ROLE_USER' && contract.isBlockedByOperator() == false}">
                                         <c:choose>
                                             <c:when test="${contract.isBlockedByClient() == true}">
 

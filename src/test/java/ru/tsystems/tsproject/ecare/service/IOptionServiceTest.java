@@ -55,6 +55,7 @@ public class IOptionServiceTest {
     @Transactional
     public void saveOptionTest() {
         Option op = optionService.saveOrUpdateOption(OP23);
+        OP23.setId(op.getId());
         Assert.assertEquals(OP23, op);
         optionService.deleteOption(op.getId());
     }
@@ -76,8 +77,10 @@ public class IOptionServiceTest {
     @Transactional
     public void deleteOption() {
         long optionsNumber = optionService.getNumberOfOptions();
-        optionService.deleteOption(OP22.getId());
+        TR2.getOptions().remove(OP22);
+        tariffService.saveOrUpdateTariff(TR2);
         Assert.assertEquals(optionsNumber - 1l, optionService.getNumberOfOptions());
+        OP22 = optionService.saveOrUpdateOption(OP22);
     }
 
     @Test(expected = ECareException.class)

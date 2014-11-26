@@ -8,11 +8,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
 import ru.tsystems.tsproject.ecare.util.PageName;
+import ru.tsystems.tsproject.ecare.util.Role;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
@@ -44,7 +46,10 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/showLogin", method = RequestMethod.GET)
-    public String showLogin() {
+    public String showLogin(@RequestParam(value = "error", required = false) String error, HttpServletRequest req) {
+        if (error != null) {
+            req.setAttribute("errormessage", "Invalid username or password.");
+        }
         return "login";
     }
 
@@ -57,7 +62,7 @@ public class LoginController {
         }
         req.setAttribute("role", role);
         try {
-            if (role.equals("ROLE_USER")) {
+            if (role.equals(Role.ROLE_USER.toString())) {
                 UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
                 Client client = clientService.findClient(userDetails.getUsername(), userDetails.getPassword());
                 req.setAttribute("client", client);
@@ -65,7 +70,7 @@ public class LoginController {
                 req.setAttribute("successmessage", "Client " + client.getName() + " loaded from database.");
                 logger.info("User(client): " + client + " login in application.");
                 return "client/client";
-            } else if (role.equals("ROLE_ADMIN")) {
+            } else if (role.equals(Role.ROLE_ADMIN.toString())) {
                 List<Client> clientsList = clientService.getAllClients();
                 req.setAttribute("clientsList", clientsList);
                 req.setAttribute("pagename", PageName.DASHBOARD.toString());
@@ -82,9 +87,6 @@ public class LoginController {
 
     @RequestMapping(value = "/logoutUser", method = RequestMethod.GET)
     public String logoutUser(HttpServletRequest req) {
-        /*Session session = Session.getInstance();
-        session.setOn(false);
-        req.setAttribute("session", session);*/
         logger.info("User has logout from application.");
         req.setAttribute("successmessage", "User has logout from system.");
         return "login";

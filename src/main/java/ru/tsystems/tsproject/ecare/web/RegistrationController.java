@@ -2,6 +2,8 @@ package ru.tsystems.tsproject.ecare.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,7 @@ import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
 import ru.tsystems.tsproject.ecare.util.PageName;
+import ru.tsystems.tsproject.ecare.util.Role;
 import ru.tsystems.tsproject.ecare.util.Util;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,9 +56,13 @@ public class RegistrationController {
             String address = Util.checkStringLength(req.getParameter("address"));
             String email = Util.checkLoginOnExisting(Util.checkStringLength(Util.checkStringOnEmpty(req.getParameter("email"))));
             String password = Util.checkPassword(Util.checkStringOnEmpty(req.getParameter("password1")), Util.checkStringOnEmpty(req.getParameter("password2")));
-            String role = "ROLE_USER";
+            String role = Role.ROLE_USER.toString();
 
-            Client client = new Client(name, lastname, birthDate, passport, address, email, password, role, 0);
+            //Password encoding
+            PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String hashedPassword = passwordEncoder.encode(password);
+
+            Client client = new Client(name, lastname, birthDate, passport, address, email, hashedPassword, role, 0);
             client = clientService.saveOrUpdateClient(client);
             req.setAttribute("client", client);
 

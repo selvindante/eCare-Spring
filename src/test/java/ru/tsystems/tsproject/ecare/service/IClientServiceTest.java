@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 import ru.tsystems.tsproject.ecare.ECareException;
 import ru.tsystems.tsproject.ecare.entities.Client;
+import ru.tsystems.tsproject.ecare.util.Util;
 
 import java.util.Date;
 import java.util.List;
@@ -27,9 +28,11 @@ public class IClientServiceTest {
 
     @BeforeClass
     public static void beforeClass() {
-        CL1 = new Client("Ivan", null, null, 9234132135l, "SPB", "ivanov@mail.ru", "password", "client", 1000);
-        CL2 = new Client("Semen", "Semenov", new Date(), 98274560923l, "Moscow", "semenov@mail.ru", "Qwerty123", "client", 1000);
-        CL3 = new Client("Petr", "Petrov", new Date(), 9582450345l, "Sankt-Peterburg", "petrov@mail.ru", "petrov51spb", "client", 2000);
+        Util.setClientService(clientService);
+
+        CL1 = new Client("Ivan", null, null, 9234132135l, "SPB", "ivanov@mail.ru", "password", "ROLE_USER", 1000);
+        CL2 = new Client("Semen", "Semenov", new Date(), 98274560923l, "Moscow", "semenov@mail.ru", "Qwerty123", "ROLE_USER", 1000);
+        CL3 = new Client("Petr", "Petrov", new Date(), 9582450345l, "Sankt-Peterburg", "petrov@mail.ru", "petrov51spb", "ROLE_USER", 2000);
     }
 
     @Before
@@ -42,6 +45,7 @@ public class IClientServiceTest {
     @Transactional
     public void saveClientTest() {
         Client cl = clientService.saveOrUpdateClient(CL1);
+        CL1.setId(cl.getId());
         Assert.assertEquals(CL1, cl);
     }
 

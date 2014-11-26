@@ -16,8 +16,8 @@ import java.util.*;
         @NamedQuery(name = "Client.findClientByLoginAndPassword", query = "SELECT c FROM Client c WHERE c.email = :login AND c.password = :password"),
         @NamedQuery(name = "Client.findClientByNumber", query = "SELECT cn.client FROM Contract cn WHERE cn.number = :number"),
         @NamedQuery(name = "Client.findClientByLogin", query = "SELECT c FROM Client c WHERE c.email = :login"),
-        @NamedQuery(name = "Client.deleteAllClients", query = "DELETE FROM Client WHERE role = 'client'"),
-        @NamedQuery(name = "Client.size", query="SELECT count(c) FROM Client c WHERE c.role = 'client'")
+        @NamedQuery(name = "Client.deleteAllClients", query = "DELETE FROM Client WHERE role = 'ROLE_USER'"),
+        @NamedQuery(name = "Client.size", query="SELECT count(c) FROM Client c WHERE c.role = 'ROLE_USER'")
     })
 public class Client implements Comparable<Client>{
     @Id
@@ -186,33 +186,6 @@ public class Client implements Comparable<Client>{
                 '}';
     }
 
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Client client = (Client) o;
-
-        if (!passport.equals(client.passport)) return false;
-        if (address != null ? !address.equals(client.address) : client.address != null) return false;
-        if (!email.equals(client.email)) return false;
-        if (lastname != null ? !lastname.equals(client.lastname) : client.lastname != null) return false;
-        if (name != null ? !name.equals(client.name) : client.name != null) return false;
-        return password.equals(client.password);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + (passport != null ? passport.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + email.hashCode();
-        result = 31 * result + password.hashCode();
-        return result;
-    }*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -220,7 +193,7 @@ public class Client implements Comparable<Client>{
 
         Client client = (Client) o;
 
-        if (amount != client.amount) return false;
+        //if (amount != client.amount) return false;
         if (id != client.id) return false;
         if (address != null ? !address.equals(client.address) : client.address != null) return false;
         if (!email.equals(client.email)) return false;
@@ -241,7 +214,7 @@ public class Client implements Comparable<Client>{
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + email.hashCode();
         result = 31 * result + password.hashCode();
-        result = 31 * result + amount;
+        //result = 31 * result + amount;
         return result;
     }
 

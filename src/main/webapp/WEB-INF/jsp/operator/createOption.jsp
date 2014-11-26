@@ -44,7 +44,7 @@
             </p>
             <br>
 
-            <hr>
+            <%--<hr>
 
             <br>
 
@@ -155,7 +155,7 @@
                 </p>
                 <br>
             </c:otherwise>
-            </c:choose>
+            </c:choose>--%>
 
             <button type="submit" class="modern">Create</button>
         </form:form>

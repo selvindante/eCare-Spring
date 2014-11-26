@@ -59,7 +59,7 @@
                 login-page="/login"
                 default-target-url="/loginUser"
                 always-use-default-target="true"
-                authentication-failure-url="/showLogin"
+                authentication-failure-url="/showLogin?error"
                 username-parameter="username"
                 password-parameter="password"/>
         <logout logout-success-url="/logoutUser" />
@@ -74,8 +74,10 @@
                                        "select email, password, enabled from client where email=?"
                                authorities-by-username-query=
                                        "select email, role from client where email =?" />
-            <!--<password-encoder hash="md5" />-->
+            <password-encoder ref="encoder" />
         </authentication-provider>
     </authentication-manager>
+
+    <beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 </beans:beans>

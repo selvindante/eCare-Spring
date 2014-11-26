@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.tsystems.tsproject.ecare.ECareException;
-import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
 import ru.tsystems.tsproject.ecare.util.ControllerUtil;
@@ -43,7 +42,7 @@ public class DashboardController {
         List<Client> clientsList = null;
         try {
             long number = Util.checkLong(req.getParameter("number"));
-            logger.info("User " + Session.getInstance().getRole() + " searching of client by number " + number + ".");
+            logger.info("User searching of client by number " + number + ".");
             Client client = clientService.findClientByNumber(number);
             req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
@@ -66,7 +65,7 @@ public class DashboardController {
         List<Client> clientsList = null;
         try{
             clientService.deleteClient(clientId);
-            logger.info("User " + Session.getInstance().getRole() + " deleted are client with id:" + clientId + " from database.");
+            logger.info("User delete are client with id:" + clientId + " from database.");
             clientsList  = clientService.getAllClients();
             req.setAttribute("successmessage", "Client with id: " + clientId + " deleted from database.");
             req.setAttribute("clientsList", clientsList);
