@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.tsystems.tsproject.ecare.ECareException;
-import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
 import ru.tsystems.tsproject.ecare.util.ControllerUtil;
@@ -29,29 +28,29 @@ public class ClientController {
     @RequestMapping(value = "/viewClient", method = RequestMethod.POST)
     public String viewClient(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
         req.setAttribute("pagename", PageName.CLIENT.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to client page.");
+        logger.info("User went to client page.");
         return "client/client";
     }
 
     @RequestMapping(value = "/editClient", method = RequestMethod.POST)
     public String editClient(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
         req.setAttribute("pagename", PageName.EDIT_CLIENT.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to edit client page.");
+        logger.info("User went to edit client page.");
         return "client/editClient";
     }
 
     @RequestMapping(value = "/updateClient", method = RequestMethod.POST)
     public String updateClient(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Client client = clientService.loadClient(clientId);
         try {
             client.setName(Util.checkStringLength(Util.checkStringOnEmpty(req.getParameter("name"))));
@@ -76,7 +75,7 @@ public class ClientController {
     @RequestMapping(value = "/addAmount", method = RequestMethod.POST)
     public String addAmount(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Client client = clientService.loadClient(clientId);
         try {
             int amount = Util.checkInt(req.getParameter("amount"));
@@ -85,7 +84,7 @@ public class ClientController {
             req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
             req.setAttribute("successmessage", "Amount " + amount + " added to balance of client " + client.getFullName() + ".");
-            logger.info("User " + Session.getInstance().getRole() + " added amount to balance of client " + client + ".");
+            logger.info("User added amount to balance of client " + client + ".");
             return "client/client";
         } catch (ECareException ecx) {
             req.setAttribute("client", client);
@@ -98,11 +97,11 @@ public class ClientController {
     @RequestMapping(value = "/newContract", method = RequestMethod.POST)
     public String newContract(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
         req.setAttribute("pagename", PageName.NEW_CONTRACT.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to create contract page.");
+        logger.info("User went to create contract page.");
         return "client/createContract";
     }
 }

@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,16 +21,15 @@
         </p>
         <br>
 
-        <form id="formId2" method="post" action="createContract" enctype="application/x-www-form-urlencoded">
+        <form:form id="formId2" method="post" action="createContract" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="id" value="${client.id}">
-            <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+            <input type="hidden" name="sessionRole" value=${role}>
             <p>
                 Telephone number (must be unique): <input type="text" placeholder="telephone number" class="simple-input" name="number" size=25 value="">
             </p>
             <button type="submit" class="modern">Create</button>
             <a class="inline-link" href="#" onclick="document.getElementById('h3ClientForm').submit()">Back</a>
-        </form>
+        </form:form>
 
     </div>
 

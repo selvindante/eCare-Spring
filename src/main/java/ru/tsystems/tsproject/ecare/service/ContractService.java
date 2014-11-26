@@ -378,6 +378,7 @@ public class ContractService implements IContractService {
      * enabled in that contract, or if that option already enabled in contract.
      */
     @Override
+    @Transactional
     public Contract enableOption(Contract cn, Option op) throws ECareException {
         logger.info("Enable option id: " + op.getId() + " in contract id: " + cn.getId() + ".");
         // Set current enabled options for contract in separated array list.
@@ -442,6 +443,7 @@ public class ContractService implements IContractService {
      * @throws ECareException if that option is not enabled in contract.
      */
     @Override
+    @Transactional
     public Contract disableOption(Contract cn, Option op) throws ECareException {
         logger.info("Disable option id: " + op.getId() + " in contract id: " + cn.getId() + ".");
         // If contract contains such option -> remove.
@@ -472,6 +474,7 @@ public class ContractService implements IContractService {
      * @return contract Contract with established tariff and options.
      */
     @Override
+    @Transactional
     public Contract setTariff(Contract contract, Tariff tariff, String chosenOptionsArray[]) {
         logger.info("Set tariff: " + tariff.getId() + " in contract id: " + contract.getId() + ".");
         // Get current tariff from contract.

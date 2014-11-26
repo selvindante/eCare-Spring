@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.tsystems.tsproject.ecare.ECareException;
-import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Tariff;
 import ru.tsystems.tsproject.ecare.service.ITariffService;
 import ru.tsystems.tsproject.ecare.util.ControllerUtil;
@@ -29,7 +28,7 @@ public class TariffController {
 
     @RequestMapping(value = "/createTariff", method = RequestMethod.POST)
     public String createTariff(HttpServletRequest req) {
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Tariff tariff = null;
         try {
             String title = Util.checkStringLength(Util.checkStringOnEmpty(req.getParameter("title")));
@@ -50,18 +49,18 @@ public class TariffController {
 
     @RequestMapping(value = "/viewTariff", method = RequestMethod.POST)
     public String viewTariff(HttpServletRequest req) {
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         long tariffId = Long.valueOf(req.getParameter("id"));
         Tariff tariff = tariffService.loadTariff(tariffId);
         req.setAttribute("tariff", tariff);
         req.setAttribute("pagename", PageName.TARIFF.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to view tariff page.");
+        logger.info("User went to view tariff page.");
         return "operator/tariff";
     }
 
     @RequestMapping(value = "/deleteTariff", method = RequestMethod.POST)
     public String deleteTariff(HttpServletRequest req) {
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         long tariffId = Long.valueOf(req.getParameter("id"));
         List<Tariff> tariffs = null;
         try {
@@ -71,7 +70,7 @@ public class TariffController {
             req.setAttribute("tariffs", tariffs);
             req.setAttribute("pagename", PageName.TARIFFS.toString());
             req.setAttribute("successmessage", "Tariff with id: " + tariffId + " deleted from database.");
-            logger.info("User " + Session.getInstance().getRole() + " went to all tariffs page.");
+            logger.info("User went to all tariffs page.");
             return "operator/tariffsList";
         } catch (ECareException ecx) {
             tariffs = tariffService.getAllTariffs();
@@ -84,12 +83,12 @@ public class TariffController {
 
     @RequestMapping(value = "/newOption", method = RequestMethod.POST)
     public String newOption(HttpServletRequest req) {
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         long tariffId = Long.valueOf(req.getParameter("id"));
         Tariff tariff = tariffService.loadTariff(tariffId);
         req.setAttribute("tariff", tariff);
         req.setAttribute("pagename", PageName.NEW_OPTION.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to create new option page.");
+        logger.info("User went to create new option page.");
         return "operator/createOption";
     }
 }

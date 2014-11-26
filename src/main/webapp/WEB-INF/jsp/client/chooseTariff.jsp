@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 
 <head>
@@ -50,13 +52,12 @@
                             <c:forEach var="tariff" items="${tariffs}">
                                 <tr>
                                     <td>
-                                        <form id="formId3${tariff.id}" method="post" action="chooseTariff" enctype="application/x-www-form-urlencoded">
+                                        <form:form id="formId3${tariff.id}" method="post" action="chooseTariff" enctype="application/x-www-form-urlencoded">
                                             <input type="hidden" name="contractId" value=${contract.id}>
                                             <input type="hidden" name="tariffId" value=${tariff.id}>
-                                            <input type="hidden" name="sessionRole" value=${session.role}>
-                                            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                                            <input type="hidden" name="sessionRole" value=${role}>
                                             <a class="inline-link" href="#" onclick="document.getElementById('formId3${tariff.id}').submit()">${tariff.title}</a>
-                                        </form>
+                                        </form:form>
                                     </td>
                                     <td>
                                         ${tariff.price}

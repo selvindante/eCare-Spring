@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.tsystems.tsproject.ecare.ECareException;
-import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.service.IClientService;
 import ru.tsystems.tsproject.ecare.util.PageName;
@@ -26,7 +25,10 @@ public class RegistrationController {
     private static Logger logger = Logger.getLogger(RegistrationController.class);
 
     @Autowired
-    IClientService clientService;
+    private IClientService clientService;
+    /*@Autowired
+    @Qualifier("authenticationManager")
+    private AuthenticationManager authenticationManager;*/
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(Model model) {
@@ -51,21 +53,25 @@ public class RegistrationController {
             String address = Util.checkStringLength(req.getParameter("address"));
             String email = Util.checkLoginOnExisting(Util.checkStringLength(Util.checkStringOnEmpty(req.getParameter("email"))));
             String password = Util.checkPassword(Util.checkStringOnEmpty(req.getParameter("password1")), Util.checkStringOnEmpty(req.getParameter("password2")));
+            String role = "ROLE_USER";
 
-            Client client = new Client(name, lastname, birthDate, passport, address, email, password, "client", 0);
+            Client client = new Client(name, lastname, birthDate, passport, address, email, password, role, 0);
             client = clientService.saveOrUpdateClient(client);
             req.setAttribute("client", client);
 
-            Session session = Session.getInstance();
-            session.setRole("client");
-            session.setOn(true);
-            req.setAttribute("session", session);
-            req.setAttribute("pagename", PageName.CLIENT.toString());
+            /*UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email, password);
+            req.getSession();
+            token.setDetails(new WebAuthenticationDetails(req));
+            Authentication authenticatedUser = authenticationManager.authenticate(token);
+            SecurityContextHolder.getContext().setAuthentication(authenticatedUser);*/
+
+            /*req.setAttribute("role", role);
+            req.setAttribute("pagename", PageName.CLIENT.toString());*/
             req.setAttribute("successmessage", "Client " + client.getName() + " created and saved in database.");
 
             logger.info("New user(client): " + client + " has registered in application.");
 
-            return "client/client";
+            return "login";
         } catch (ECareException ecx) {
             req.setAttribute("name", req.getParameter("name"));
             req.setAttribute("lastname", req.getParameter("lastname"));

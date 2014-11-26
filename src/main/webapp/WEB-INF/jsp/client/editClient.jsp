@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,10 +16,9 @@
 
     <div class="inner-wrapper">
 
-        <form method="post" action="updateClient" enctype="application/x-www-form-urlencoded">
+        <form:form method="post" action="updateClient" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="id" value=${client.id}>
-            <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+            <input type="hidden" name="sessionRole" value=${role}>
             <p>
                 Name*:
                 <br>
@@ -58,7 +59,7 @@
             </p>
             <br>
             <button type="submit" class="modern">Save</button>
-        </form>
+        </form:form>
     </div>
 
     <jsp:include page="../fragments/footer.jsp"></jsp:include>

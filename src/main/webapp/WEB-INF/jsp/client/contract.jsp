@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,11 +42,10 @@
                 <c:otherwise>No</c:otherwise>
             </c:choose>
         </p>
-            <form id="formId3" method="post" action="changeTariff" enctype="application/x-www-form-urlencoded">
+            <form:form id="formId3" method="post" action="changeTariff" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="id" value=${contract.id}>
-                <input type="hidden" name="sessionRole" value=${session.role}>
-                <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-            </form>
+                <input type="hidden" name="sessionRole" value=${role}>
+            </form:form>
     </div>
 
     <div class="inner-wrapper">

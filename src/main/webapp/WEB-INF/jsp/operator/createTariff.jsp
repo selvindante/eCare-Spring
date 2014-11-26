@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 
 <head>
@@ -16,9 +18,8 @@
 
     <div class="inner-wrapper">
 
-        <form method="post" action="createTariff" enctype="application/x-www-form-urlencoded">
-            <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+        <form:form method="post" action="createTariff" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="sessionRole" value=${role}>
             <p>
                 Title:
                 <br>
@@ -37,11 +38,10 @@
             <br>
             <button type="submit" class="modern">Create</button>
             <a class="inline-link" href="#" onclick="document.getElementById('formId3').submit()">Back</a>
-        </form>
+        </form:form>
 
         <form id="formId3" method="post" action="viewAllTariffs" enctype="application/x-www-form-urlencoded">
-            <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+            <input type="hidden" name="sessionRole" value=${role}>
         </form>
 
     </div>

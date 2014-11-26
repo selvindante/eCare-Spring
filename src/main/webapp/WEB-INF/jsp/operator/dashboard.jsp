@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="ru.tsystems.tsproject.ecare.entities.Client" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="true"%>
 <html>
 
@@ -46,11 +47,11 @@
                             <tr>
                                 <td>
 
-                                    <form id="formId2${client.id}" method="post" action="viewClient" enctype="application/x-www-form-urlencoded">
+                                    <form:form id="formId2${client.id}" method="post" action="viewClient" enctype="application/x-www-form-urlencoded">
                                         <input type="hidden" name="id" value=${client.id}>
                                         <input type="hidden" name="sessionRole" value=${role}>
                                         <a class="inline-link" href="#" onclick="document.getElementById('formId2${client.id}').submit()">${client.id}</a>
-                                    </form>
+                                    </form:form>
 
                                 </td>
                                 <td>
@@ -64,11 +65,11 @@
                                 </td>
                                 <td style="width: 0">
 
-                                    <form id="formId3${client.id}" method="post" action="deleteClient" enctype="application/x-www-form-urlencoded">
+                                    <form:form id="formId3${client.id}" method="post" action="deleteClient" enctype="application/x-www-form-urlencoded">
                                         <input type="hidden" name="id" value=${client.id}>
                                         <input type="hidden" name="sessionRole" value=${role}>
                                         <a class="inline-link-delete" title="Delete client" href="#" onclick="document.getElementById('formId3${client.id}').submit()"></a>
-                                    </form>
+                                    </form:form>
 
                                 </td>
                             </tr>

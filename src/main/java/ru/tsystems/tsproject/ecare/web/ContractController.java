@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.tsystems.tsproject.ecare.ECareException;
-import ru.tsystems.tsproject.ecare.Session;
 import ru.tsystems.tsproject.ecare.entities.Client;
 import ru.tsystems.tsproject.ecare.entities.Contract;
 import ru.tsystems.tsproject.ecare.entities.Option;
@@ -42,7 +41,7 @@ public class ContractController {
     @RequestMapping(value = "/createContract", method = RequestMethod.POST)
     public String createContract(HttpServletRequest req) {
         long clientId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Client client = clientService.loadClient(clientId);
         req.setAttribute("client", client);
         try {
@@ -67,19 +66,19 @@ public class ContractController {
     @RequestMapping(value = "/viewContract", method = RequestMethod.POST)
     public String viewContract(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Contract contract = contractService.loadContract(contractId);
         req.setAttribute("contract", contract);
         req.setAttribute("client", contract.getClient());
         req.setAttribute("pagename", PageName.CONTRACT.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to view contract page.");
+        logger.info("User went to view contract page.");
         return "client/contract";
     }
 
     @RequestMapping(value = "/deleteContract", method = RequestMethod.POST)
     public String deleteContract(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         try{
             Contract contract = contractService.loadContract(contractId);
             Client client = contract.getClient();
@@ -88,7 +87,7 @@ public class ContractController {
             req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
             req.setAttribute("successmessage", "Contract " + contract.getNumber() + " deleted from database.");
-            logger.info("User " + Session.getInstance().getRole() + " deleted contract with id: " + contractId + " from database.");
+            logger.info("User deleted contract with id: " + contractId + " from database.");
             return "client/client";
         }catch (ECareException ecx){
             req.setAttribute("client", contractService.loadContract(contractId).getClient());
@@ -101,7 +100,7 @@ public class ContractController {
     @RequestMapping(value = "/blockByOperator", method = RequestMethod.POST)
     public String blockByOperator(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         try{
             Contract contract = contractService.loadContract(contractId);
             contractService.blockByOperator(contract);
@@ -122,7 +121,7 @@ public class ContractController {
     @RequestMapping(value = "/unblockByOperator", method = RequestMethod.POST)
     public String unblockByOperator(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         try{
             Contract contract = contractService.loadContract(contractId);
             contractService.unblockByOperator(contract);
@@ -143,7 +142,7 @@ public class ContractController {
     @RequestMapping(value = "/blockByClient", method = RequestMethod.POST)
     public String blockByClient(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         try{
             Contract contract = contractService.loadContract(contractId);
             contractService.blockByClient(contract);
@@ -164,7 +163,7 @@ public class ContractController {
     @RequestMapping(value = "/unblockByClient", method = RequestMethod.POST)
     public String unblockByClient(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         try{
             Contract contract = contractService.loadContract(contractId);
             contractService.unblockByClient(contract);
@@ -185,13 +184,13 @@ public class ContractController {
     @RequestMapping(value = "/changeTariff", method = RequestMethod.POST)
     public String changeTariff(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("id"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Contract contract = contractService.loadContract(contractId);
         List<Tariff> tariffs = tariffService.getAllTariffs();
         req.setAttribute("contract", contract);
         req.setAttribute("tariffs", tariffs);
         req.setAttribute("pagename", PageName.CHOOSE_TARIFF.toString());
-        logger.info("User " + Session.getInstance().getRole() + " went to change tariff page for contract " + contract + ".");
+        logger.info("User went to change tariff page for contract " + contract + ".");
         return "client/chooseTariff";
     }
 
@@ -199,7 +198,7 @@ public class ContractController {
     public String chooseTariff(HttpServletRequest req) {
         long contractId = Long.valueOf(req.getParameter("contractId"));
         long tariffId = Long.valueOf(req.getParameter("tariffId"));
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Contract contract = null;
         try {
             contract = contractService.loadContract(contractId);
@@ -226,7 +225,7 @@ public class ContractController {
         long contractId = Long.valueOf(req.getParameter("contractId"));
         long tariffId = Long.valueOf(req.getParameter("tariffId"));
         String chosenOptionsArray[] = req.getParameterValues("options");
-        ControllerUtil.setSession(req);
+        ControllerUtil.setRole(req);
         Contract contract = contractService.loadContract(contractId);
         try {
             Tariff tariff = tariffService.loadTariff(tariffId);

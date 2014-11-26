@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 
 <head>
@@ -42,11 +44,10 @@
 
     <div class="inner-wrapper">
 
-        <form id="formId3" method="post" action="updateOption" enctype="application/x-www-form-urlencoded">
+        <form:form id="formId3" method="post" action="updateOption" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="id" value="${option.id}">
             <input type="hidden" name="tariffId" value="${tariff.id}">
-            <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+            <input type="hidden" name="sessionRole" value=${role}>
             <p>
                 Choose dependent options:
                 <c:choose>
@@ -245,7 +246,7 @@
             </c:choose>
 
             <button type="submit" class="modern">Save</button>
-        </form>
+        </form:form>
     </div>
 
     <jsp:include page="../fragments/footer.jsp"></jsp:include>

@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 
 <head>
@@ -30,11 +32,10 @@
 
     <div class="inner-wrapper">
 
-            <form id="formId4" method="post" action="newOption" enctype="application/x-www-form-urlencoded">
+            <form:form id="formId4" method="post" action="newOption" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="id" value="${tariff.id}">
-                <input type="hidden" name="sessionRole" value=${session.role}>
-                <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-            </form>
+                <input type="hidden" name="sessionRole" value=${role}>
+            </form:form>
 
         Available options list:
 
@@ -65,13 +66,12 @@
                             <tr>
                                 <td>
 
-                                    <form id="formId6${option.id}" method="post" action="viewOption" enctype="application/x-www-form-urlencoded">
+                                    <form:form id="formId6${option.id}" method="post" action="viewOption" enctype="application/x-www-form-urlencoded">
                                         <input type="hidden" name="id" value=${option.id}>
                                         <input type="hidden" name="tariffId" value=${tariff.id}>
-                                        <input type="hidden" name="sessionRole" value=${session.role}>
-                                        <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                                        <input type="hidden" name="sessionRole" value=${role}>
                                         <a class="inline-link" href="#" onclick="document.getElementById('formId6${option.id}').submit()">${option.id}</a>
-                                    </form>
+                                    </form:form>
 
                                 </td>
                                 <td>
@@ -85,13 +85,12 @@
                                 </td>
                                 <td style="width: 0">
 
-                                    <form id="formId7${option.id}" method="post" action="deleteOption" enctype="application/x-www-form-urlencoded">
+                                    <form:form id="formId7${option.id}" method="post" action="deleteOption" enctype="application/x-www-form-urlencoded">
                                         <input type="hidden" name="id" value=${option.id}>
                                         <input type="hidden" name="tariffId" value=${tariff.id}>
-                                        <input type="hidden" name="sessionRole" value=${session.role}>
-                                        <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                                        <input type="hidden" name="sessionRole" value=${role}>
                                         <a class="inline-link-delete" title="Delete option" href="#" onclick="document.getElementById('formId7${option.id}').submit()"></a>
-                                    </form>
+                                    </form:form>
 
                                 </td>
                             </tr>

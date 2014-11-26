@@ -19,7 +19,7 @@ import java.util.Date;
 public class Util {
 
     /*Client service instance for method of checking telephone number on existing*/
-    private static ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource-test.xml"});
+    private static ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"spring/spring-datasource.xml"});
     private static IClientService clientService = (IClientService) context.getBean("clientService");
 
     /*Logger for util operations*/

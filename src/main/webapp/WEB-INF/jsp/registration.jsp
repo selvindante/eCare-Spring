@@ -103,9 +103,8 @@
             <button type="submit" class="modern">Save</button>
             <a href="#" onclick="document.getElementById('formId2').submit()" class="inline-link">Back</a>
         </form:form>
-        <form id="formId2" method="post" action="backToLogin" enctype="application/x-www-form-urlencoded">
-
-        </form>
+        <form:form id="formId2" method="post" action="backToLogin" enctype="application/x-www-form-urlencoded">
+        </form:form>
     </div>
 
     <jsp:include page="fragments/footer.jsp"></jsp:include>

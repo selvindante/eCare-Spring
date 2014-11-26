@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="true"%>
 <html>
 
 <head>
@@ -35,12 +37,11 @@
         <p>
             Cost of connection: ${option.costOfConnection}
         </p>
-        <form id="formId4" method="post" action="editOption" enctype="application/x-www-form-urlencoded">
+        <form:form id="formId4" method="post" action="editOption" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="id" value="${option.id}">
             <input type="hidden" name="tariffId" value="${tariff.id}">
-            <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-        </form>
+            <input type="hidden" name="sessionRole" value=${role}>
+        </form:form>
 
     </div>
 
@@ -53,12 +54,11 @@
             <a class="inline-link-edit" style="padding-right: 10px" title="Edit option dependencies" href="#" onclick="document.getElementById('formId4').submit()"></a>
             <a class="inline-link-delete" title="Clear all dependencies" href="#" onclick="document.getElementById('formId5').submit()"></a>
 
-            <form id="formId5" method="post" action="removeAllDependentOptions" enctype="application/x-www-form-urlencoded">
+            <form:form id="formId5" method="post" action="removeAllDependentOptions" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="id" value="${option.id}">
                 <input type="hidden" name="tariffId" value="${tariff.id}">
-                <input type="hidden" name="sessionRole" value=${session.role}>
-                <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-            </form>
+                <input type="hidden" name="sessionRole" value=${role}>
+            </form:form>
 
         </p>
         <br>
@@ -95,14 +95,13 @@
                                 ${dependentOption.costOfConnection}
                             </td>
                             <td style="width: 0">
-                                <form id="formId5${dependentOption.id}" method="post" action="removeDependentOption" enctype="application/x-www-form-urlencoded">
+                                <form:form id="formId5${dependentOption.id}" method="post" action="removeDependentOption" enctype="application/x-www-form-urlencoded">
                                     <input type="hidden" name="id" value="${option.id}">
                                     <input type="hidden" name="dependentOptionId" value="${dependentOption.id}">
                                     <input type="hidden" name="tariffId" value="${tariff.id}">
-                                    <input type="hidden" name="sessionRole" value=${session.role}>
-                                    <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                                    <input type="hidden" name="sessionRole" value=${role}>
                                     <a class="inline-link-delete" title="Remove dependency" href="#" onclick="document.getElementById('formId5${dependentOption.id}').submit()"></a>
-                                </form>
+                                </form:form>
                             </td>
                         </tr>
                     </c:forEach>
@@ -124,12 +123,11 @@
             <a class="inline-link-edit" style="padding-right: 10px" title="Edit option dependencies" href="#" onclick="document.getElementById('formId4').submit()"></a>
             <a class="inline-link-delete" title="Clear all incompatibilities" href="#" onclick="document.getElementById('formId6').submit()"></a>
 
-        <form id="formId6" method="post" action="removeAllIncompatibleOptions" enctype="application/x-www-form-urlencoded">
+        <form:form id="formId6" method="post" action="removeAllIncompatibleOptions" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="id" value="${option.id}">
             <input type="hidden" name="tariffId" value="${tariff.id}">
             <input type="hidden" name="sessionRole" value=${session.role}>
-            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
-        </form>
+        </form:form>
 
         </p>
         <br>
@@ -166,14 +164,13 @@
                             ${incompatibleOption.costOfConnection}
                     </td>
                     <td style="width: 0">
-                        <form id="formId6${incompatibleOption.id}" method="post" action="removeIncompatibleOption" enctype="application/x-www-form-urlencoded">
+                        <form:form id="formId6${incompatibleOption.id}" method="post" action="removeIncompatibleOption" enctype="application/x-www-form-urlencoded">
                             <input type="hidden" name="id" value="${option.id}">
                             <input type="hidden" name="incompatibleOptionId" value="${incompatibleOption.id}">
                             <input type="hidden" name="tariffId" value="${tariff.id}">
-                            <input type="hidden" name="sessionRole" value=${session.role}>
-                            <input type="hidden" name="sessionStatus" value=${session.isOn()}>
+                            <input type="hidden" name="sessionRole" value=${role}>
                             <a class="inline-link-delete" title="Remove incompatibility" href="#" onclick="document.getElementById('formId6${incompatibleOption.id}').submit()"></a>
-                        </form>
+                        </form:form>
                     </td>
                 </tr>
             </c:forEach>

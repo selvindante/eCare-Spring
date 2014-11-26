@@ -70,9 +70,8 @@
                     <a href="#" onclick="document.getElementById('formId1').submit()" class="inline-link">Registration</a>
                 </form>
 
-            <form id="formId1" method="post" action="registration" enctype="application/x-www-form-urlencoded">
-                <input type="hidden" name="action" value="registration">
-            </form>
+            <form:form id="formId1" method="post" action="registration" enctype="application/x-www-form-urlencoded">
+            </form:form>
 
         </div>
 
