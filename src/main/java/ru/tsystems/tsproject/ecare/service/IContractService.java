@@ -152,4 +152,12 @@ public interface IContractService {
      * @return contract entity with established tariff and options.
      */
     public Contract setTariff(Contract contract, Tariff tariff, String chosenOptionsArray[]);
+
+    /**
+     * This method provides setting of the default tariff in new contract.
+     *
+     * @param contract new contract.
+     * @return contract with default tariff.
+     */
+    public Contract setDefaultTariff(Contract contract);
 }

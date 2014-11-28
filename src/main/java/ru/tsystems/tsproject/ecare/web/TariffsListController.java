@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 15.11.2014.
+ * Controller of tariffList.jsp page.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class TariffsListController {
     @Autowired

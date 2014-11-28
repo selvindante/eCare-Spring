@@ -18,15 +18,32 @@
 
     <div class="inner-wrapper">
 
-        <p>
-            Tariff ID: ${tariff.id}
-        </p>
-        <p>
-            Title: ${tariff.title}
-        </p>
-        <p>
-            Price: ${tariff.price}
-        </p>
+        <table style="font-weight: 700">
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Tariff ID:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${tariff.id}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Title:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${tariff.title}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Price:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${tariff.price}
+                </td>
+            </tr>
+        </table>
 
     </div>
 

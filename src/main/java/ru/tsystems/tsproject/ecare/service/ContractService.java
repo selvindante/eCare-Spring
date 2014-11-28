@@ -32,6 +32,9 @@ public class ContractService implements IContractService {
     /*Client service instance for some methods of working with client amount in contract service*/
     private final IClientService clientService;
 
+    /*Tariff service instance for some methods of working with tariff service*/
+    private final ITariffService tariffService;
+
     /*Option service instance for some methods of working with option service*/
     private final IOptionService optionService;
 
@@ -40,10 +43,11 @@ public class ContractService implements IContractService {
 
     /*Constructor of Contract Service class*/
     @Autowired
-    public ContractService(ContractDao cnDAO, IClientService clientService, IOptionService optionService) {
+    public ContractService(ContractDao cnDAO, IClientService clientService, IOptionService optionService, ITariffService tariffService) {
         this.cnDao = cnDAO;
         this.clientService = clientService;
         this.optionService = optionService;
+        this.tariffService = tariffService;
     }
 
     /**
@@ -505,6 +509,21 @@ public class ContractService implements IContractService {
         }
         //Updating of contract in DB.
         contract = saveOrUpdateContract(contract);
+        return contract;
+    }
+
+    /**
+     * This method implements setting of the default tariff in new contract.
+     *
+     * @param contract new contract.
+     * @return contract with default tariff.
+     */
+    @Override
+    @Transactional
+    public Contract setDefaultTariff(Contract contract) {
+        Tariff tariff = tariffService.loadTariff(1l);
+        String optionId[] = {"1"};
+        contract = setTariff(contract, tariff, optionId);
         return contract;
     }
 }

@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 06.10.2014.
+ * Implementation for AbstractDAO class, that works with Tariff entity. Marked as repository for
+ * Spring Framework.
  */
 @Repository("tariffDAO")
 public class TariffDao extends AbstractDAO<Tariff> {

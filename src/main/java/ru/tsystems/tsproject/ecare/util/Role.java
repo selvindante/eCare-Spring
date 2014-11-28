@@ -1,8 +1,7 @@
 package ru.tsystems.tsproject.ecare.util;
 
 /**
- * Created by Selvin
- * on 26.11.2014.
+ * This enum class contains roles of the users in application..
  */
 public enum Role {
     ROLE_USER("ROLE_USER"),

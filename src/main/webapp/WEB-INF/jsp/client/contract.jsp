@@ -16,7 +16,64 @@
 
     <div class="inner-wrapper">
 
-        <p>
+        <table style="font-weight: 700">
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 250">
+                    Client:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.getFullName()}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 250">
+                    Balance:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.amount}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 250">
+                    Contract phone number:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${contract.number}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 250">
+                    Tariff title:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${contract.tariff.title}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 250">
+                    Is blocked by operator:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    <c:choose>
+                        <c:when test="${contract.isBlockedByOperator()}">Yes</c:when>
+                        <c:otherwise>No</c:otherwise>
+                    </c:choose>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 250">
+                    Is blocked by client:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    <c:choose>
+                        <c:when test="${contract.isBlockedByClient()}">Yes</c:when>
+                        <c:otherwise>No</c:otherwise>
+                    </c:choose>
+                </td>
+            </tr>
+        </table>
+
+        <%--<p>
             Client: ${client.getFullName()}
         </p>
         <p>
@@ -41,7 +98,7 @@
                 <c:when test="${contract.isBlockedByClient()}">Yes</c:when>
                 <c:otherwise>No</c:otherwise>
             </c:choose>
-        </p>
+        </p>--%>
             <form:form id="formId3" method="post" action="changeTariff" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="id" value=${contract.id}>
                 <input type="hidden" name="sessionRole" value=${role}>

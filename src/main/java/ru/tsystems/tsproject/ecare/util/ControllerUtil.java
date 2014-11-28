@@ -12,7 +12,6 @@ import java.util.Collection;
  *
  * @author Starostin Konstantin
  */
-
 @Component
 public class ControllerUtil {
 

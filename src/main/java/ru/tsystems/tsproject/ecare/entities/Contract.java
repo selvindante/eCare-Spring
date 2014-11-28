@@ -5,10 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Selvin
- * on 30.09.2014.
+ * This class describes the entity of the contract for the service provider. Entity linked with
+ * the database through JPA.
+ *
+ * @author Starostin Konstantin
  */
-
 @Entity
 @Table(name = "contract")
 @NamedQueries(

@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 15.11.2014.
+ * Controller of tariff.jsp and createTariff.jsp pages.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class TariffController {
     @Autowired
@@ -43,7 +43,7 @@ public class TariffController {
         } catch (ECareException ecx) {
             req.setAttribute("pagename", PageName.NEW_TARIFF.toString());
             req.setAttribute("errormessage", ecx.getMessage());
-            return "operator/newTariff";
+            return "operator/createTariff";
         }
     }
 

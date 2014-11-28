@@ -1,8 +1,7 @@
 package ru.tsystems.tsproject.ecare.util;
 
 /**
- * Created by Selvin
- * on 29.10.2014.
+ * This enum class contains page names to transfer them to the JSP page header.
  */
 public enum PageName {
     LOGIN ("Login"),

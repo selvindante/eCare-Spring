@@ -9,8 +9,8 @@ import javax.persistence.Query;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 02.10.2014.
+ * Implementation for AbstractDAO class, that works with Client entity. Marked as repository for
+ * Spring Framework.
  */
 @Repository("clientDao")
 public class ClientDao extends AbstractDAO<Client> {

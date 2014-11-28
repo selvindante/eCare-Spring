@@ -19,19 +19,15 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
- * Created by Selvin
- * on 14.11.2014.
+ * Controller of registration.jsp page.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class RegistrationController {
     private static Logger logger = Logger.getLogger(RegistrationController.class);
-
     @Autowired
     private IClientService clientService;
-    /*@Autowired
-    @Qualifier("authenticationManager")
-    private AuthenticationManager authenticationManager;*/
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(Model model) {
@@ -66,14 +62,6 @@ public class RegistrationController {
             client = clientService.saveOrUpdateClient(client);
             req.setAttribute("client", client);
 
-            /*UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email, password);
-            req.getSession();
-            token.setDetails(new WebAuthenticationDetails(req));
-            Authentication authenticatedUser = authenticationManager.authenticate(token);
-            SecurityContextHolder.getContext().setAuthentication(authenticatedUser);*/
-
-            /*req.setAttribute("role", role);
-            req.setAttribute("pagename", PageName.CLIENT.toString());*/
             req.setAttribute("successmessage", "Client " + client.getName() + " created and saved in database.");
 
             logger.info("New user(client): " + client + " has registered in application.");

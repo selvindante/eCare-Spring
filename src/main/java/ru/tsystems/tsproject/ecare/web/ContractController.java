@@ -22,10 +22,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 15.11.2014.
+ * Controller of contract.jsp, createContract.jsp, chooseTariff.jsp and chooseOptions.jsp pages.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class ContractController {
     @Autowired
@@ -50,9 +50,15 @@ public class ContractController {
             Contract contract = new Contract(client, number, null, false, false);
             client.addContract(contract);
             client = clientService.saveOrUpdateClient(client);
+
+            //Connecting of standard tariff for contract
+            contract = contractService.findContractByNumber(number);
+            contractService.setDefaultTariff(contract);
+            client = clientService.loadClient(clientId);
+
             req.setAttribute("client", client);
             req.setAttribute("pagename", PageName.CLIENT.toString());
-            req.setAttribute("successmessage", "Contract " + contract.getNumber() + " created for client " + client.getFullName() + ".");
+            req.setAttribute("successmessage", "Contract " + contract.getNumber() + " with standard tariff created for client " + client.getFullName() + ".");
             logger.info("New contract: " + contract + " has created.");
             return "client/client";
         } catch (ECareException ecx) {

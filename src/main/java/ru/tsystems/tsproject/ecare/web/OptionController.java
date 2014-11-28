@@ -17,10 +17,10 @@ import ru.tsystems.tsproject.ecare.util.Util;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by Selvin
- * on 15.11.2014.
+ * Controller of option.jsp, newOption.jsp and editOption.jsp pages.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class OptionController {
     @Autowired

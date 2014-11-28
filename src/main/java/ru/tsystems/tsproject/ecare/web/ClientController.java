@@ -15,10 +15,10 @@ import ru.tsystems.tsproject.ecare.util.Util;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by Selvin
- * on 15.11.2014.
+ * Controller of client.jsp and editClient.jsp pages.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class ClientController {
     @Autowired

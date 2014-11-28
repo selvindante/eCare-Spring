@@ -19,26 +19,61 @@
 
     <div class="inner-wrapper">
 
-        <p>
-            Tariff ID: ${tariff.id}
-        </p>
-        <p>
-            Tariff title: ${tariff.title}
-        </p>
+        <table style="font-weight: 700">
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 200">
+                    Tariff ID:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${tariff.id}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 200">
+                    Tariff title:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${tariff.title}
+                </td>
+            </tr>
+        </table>
+
         <br>
-        <p>
-            Option ID: ${option.id}
-        </p>
-        <p>
-            Option title: ${option.title}
-        </p>
-        <p>
-            Option  price: ${option.price}
-        </p>
-        <p>
-            Cost of connection: ${option.costOfConnection}
-        </p>
-        <br>
+
+        <table style="font-weight: 700">
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 200">
+                    Option ID:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${option.id}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 200">
+                    Option title:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${option.title}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 200">
+                    Option  price:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${option.price}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px; width: 200">
+                    Cost of connection:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${option.costOfConnection}
+                </td>
+            </tr>
+        </table>
 
     </div>
 

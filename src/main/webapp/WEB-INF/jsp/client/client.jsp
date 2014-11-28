@@ -27,27 +27,66 @@
         </form:form>
 
         <br>
-        <p>
-            Name: ${client.name}
-        </p>
-        <p>
-            Lastname: ${client.lastname}
-        </p>
-        <p>
-            Birthdate: ${client.getBirthDateToString()}
-        </p>
-        <p>
-            E-mail: ${client.email}
-        </p>
-        <p>
-            Address: ${client.address}
-        </p>
-        <p>
-            Passport: ${client.passport}
-        </p>
-        <p>
-            Balance: ${client.amount}
-        </p>
+        <table style="font-weight: 700">
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Name:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.name}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Lastname:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.lastname}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Birthdate:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.getBirthDateToString()}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    E-mail:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.email}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Address:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.address}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Passport:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.passport}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 20px">
+                    Balance:
+                </td>
+                <td style="width: 700; padding: 10px 10px 10px 20px">
+                    ${client.amount}
+                </td>
+            </tr>
+        </table>
+
+        <br>
         <form:form method="post" action="addAmount" enctype="application/x-www-form-urlencoded">
             <p>
                 <input type="hidden" name="id" value=${client.id}>

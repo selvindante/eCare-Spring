@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 15.11.2014.
+ * Controller of dashboard.jsp page.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class DashboardController {
     private static Logger logger = Logger.getLogger(DashboardController.class);

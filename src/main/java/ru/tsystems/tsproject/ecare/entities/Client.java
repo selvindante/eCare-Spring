@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.util.*;
 
 /**
- * Created by Selvin
- * on 30.09.2014.
+ * This class describes the entity of the client for the service provider. Entity linked with
+ * the database through JPA.
+ *
+ * @author Starostin Konstantin
  */
-
 @Entity
 @Table(name = "client")
 @NamedQueries(

@@ -21,10 +21,10 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by Selvin
- * on 14.11.2014.
+ * Controller of login.jsp page.
+ *
+ * @author Starostin Konstantin
  */
-
 @Controller
 public class LoginController {
     private static Logger logger = Logger.getLogger(LoginController.class);
