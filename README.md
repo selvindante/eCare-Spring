@@ -16,34 +16,17 @@ Task description:
 
 In the task required to write an application that simulates the operation of mobile network operator information system. Below is a more detailed description of subject area and technical requirements.
 There are following kinds of entities:
-•	Tariff
--	Title
--	Price
--	List of available options
-•	Option
--	Title
--	Price
--	Cost of connection
-•	Client
--	Name
--	Last name
--	Birth date
--	Passport data
--	Address
--	List of contracts (telephones numbers of client)
--	E-mail
--	Password
-•	Contract
--	Telephone number
--	Tariff
--	Connected options for tariff
+-	Tariff (Title, Price, List of available options);
+-	Option (Title, Price , Cost of connection);
+-	Client (Name, Last name, Birth date, Passport data, Address, List of contracts, E-mail, Password);
+-	Contract (Telephone number, Tariff, Connected options for tariff).
 The application must provide the following functionality:
-•	For clients
+For clients:
 -	Browse of the contract in a personal cabinet;
 -	Browse of all available tariffs and changing of tariff;
 -	Browse of all available options for tariff, adding new options, disable the existing ones;
 -	Lock / Unlock of number (if number is locked, you cannot change tariff and options; if number is not locked by client, he can’t unlock it);
-•	For employees
+For employees:
 -	Conclusion of a contract with a new client: the choice of a new telephone number with the tariff and options. The phone number should be unique.
 -	Browse of all clients and contracts;
 -	Lock / Unlock of clients contract;
