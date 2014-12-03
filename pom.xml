@@ -280,7 +280,7 @@
                         <server>tomcat</server>
                         <update>true</update>
                         <url>http://localhost:8080/manager/text</url>
-                        <warFile>D:\Dropbox\Projects\Java\eCare\target\eCare.war</warFile>
+                        <warFile>D:\Dropbox\Projects\Java\eCare - Spring\target\eCare.war</warFile>
                         <username>tomcat</username>
                         <password>tomcat</password>
                     </configuration>

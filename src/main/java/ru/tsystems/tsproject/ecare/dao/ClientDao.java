@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 /**
- * Implementation for AbstractDAO class, that works with Client entity. Marked as repository for
+ * Implementation for AbstractDAO class, which works with Client entity. Marked as repository for
  * Spring Framework.
  */
 @Repository("clientDao")

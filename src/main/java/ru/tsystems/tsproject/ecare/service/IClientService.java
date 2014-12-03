@@ -10,7 +10,6 @@ import java.util.List;
  *
  * @author Starostin Konstantin
  */
-
 public interface IClientService {
 
     /**

@@ -39,7 +39,7 @@ CREATE TABLE `client` (
   PRIMARY KEY (`client_id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `client_id_UNIQUE` (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3317 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3328 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `client` (
 
 LOCK TABLES `client` WRITE;
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
-INSERT INTO `client` VALUES ('Operator','1',NULL,NULL,'','admin','admin',1391,'ROLE_ADMIN',0,1),('Angus','Young','1955-03-31',2132435465,'Scotland','young@mail.com','123456',3312,'ROLE_USER',1000,1),('Richard','Blackmore','1945-04-14',7612534032,'Great Britain','ritchieb@mail.com','123456',3313,'ROLE_USER',1550,1),('Saul','Hudson','1965-06-23',3290127835,'Great Britain, London','hudson@mail.com','123456',3314,'ROLE_USER',150,1),('Brian','Carroll','1969-05-13',7348261743,'USA','bucket@mail.com','123456',3315,'ROLE_USER',0,1),('Client','Temporary','1980-11-01',1231234532,'SPB, street, house','client@mail.com','123456',3316,'ROLE_USER',0,1);
+INSERT INTO `client` VALUES ('Operator','1',NULL,NULL,'','admin','$2a$10$991vQrXGj0Gcx7Wx6aXJzO41AsEGB/m42oRIOt/U..ORunj.4kuVu',1391,'ROLE_ADMIN',0,1),('Angus','Young','1955-03-31',2132435465,'Scotland','young@mail.com','$2a$10$zLj8rLOrEsFmN5zJ5ghZhuUbQXiC5TIOqJBm29jxJ.kXRJc27pa.e',3312,'ROLE_USER',1000,1),('Richard','Blackmore','1945-04-14',7612534032,'Great Britain','ritchieb@mail.com','$2a$10$QJ9r.HWCVVm2jwUsy4emzeSUNjR.AMWZSuZ5BzrMYRZ8xzbw6Y1Q2',3313,'ROLE_USER',1550,1),('Saul','Hudson','1965-06-23',3290127835,'Great Britain, London','hudson@mail.com','$2a$10$Q132xlw8aAcCJTjTpGHyXepDkot6IZPQ3hrWmD8atTvwv5gfuwriG',3314,'ROLE_USER',150,1),('Brian','Carroll','1969-05-13',7348261743,'USA','bucket@mail.com','$2a$10$QJ9r.HWCVVm2jwUsy4emzeSUNjR.AMWZSuZ5BzrMYRZ8xzbw6Y1Q2',3315,'ROLE_USER',1000,1);
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,7 @@ CREATE TABLE `contract` (
   KEY `contract_idx` (`tariff_id`),
   CONSTRAINT `client_id` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `contract_ibfk_1` FOREIGN KEY (`tariff_id`) REFERENCES `tariff` (`tariff_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1769 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1787 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +134,7 @@ CREATE TABLE `dependent_option` (
 
 LOCK TABLES `dependent_option` WRITE;
 /*!40000 ALTER TABLE `dependent_option` DISABLE KEYS */;
-INSERT INTO `dependent_option` VALUES (7102,7103),(7103,7102),(7102,7104),(7104,7102),(7103,7104),(7104,7103),(7108,7109),(7109,7108),(7108,7110),(7110,7108),(7109,7110),(7110,7109),(7118,7120),(7120,7118),(7118,7125),(7125,7118),(7125,7120),(7120,7125),(7121,7122),(7122,7121),(7121,7123),(7123,7121),(7122,7123),(7123,7122),(7150,7152),(7150,7151),(7151,7150),(7152,7150),(7151,7152),(7152,7151);
+INSERT INTO `dependent_option` VALUES (7102,7103),(7103,7102),(7102,7104),(7104,7102),(7103,7104),(7104,7103),(7108,7109),(7109,7108),(7108,7110),(7110,7108),(7109,7110),(7110,7109),(7118,7120),(7120,7118),(7118,7125),(7125,7118),(7125,7120),(7120,7125),(7121,7122),(7122,7121),(7121,7123),(7123,7121),(7122,7123),(7123,7122),(2,1),(2,3),(3,2),(1,2),(1,3),(3,1),(7200,7202),(7202,7200),(7200,7201),(7202,7201),(7201,7202),(7201,7200);
 /*!40000 ALTER TABLE `dependent_option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `incompatible_option` (
 
 LOCK TABLES `incompatible_option` WRITE;
 /*!40000 ALTER TABLE `incompatible_option` DISABLE KEYS */;
-INSERT INTO `incompatible_option` VALUES (7111,7112),(7112,7111),(7118,7121),(7121,7118),(7118,7122),(7122,7118),(7118,7123),(7123,7118),(7125,7121),(7121,7125),(7125,7122),(7122,7125),(7125,7123),(7123,7125),(7120,7121),(7121,7120),(7120,7122),(7122,7120),(7120,7123),(7123,7120);
+INSERT INTO `incompatible_option` VALUES (7111,7112),(7112,7111),(7118,7121),(7121,7118),(7118,7122),(7122,7118),(7118,7123),(7123,7118),(7125,7121),(7121,7125),(7125,7122),(7122,7125),(7125,7123),(7123,7125),(7120,7121),(7121,7120),(7120,7122),(7122,7120),(7120,7123),(7123,7120),(7204,7203),(7203,7204);
 /*!40000 ALTER TABLE `incompatible_option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +180,7 @@ CREATE TABLE `option1` (
   UNIQUE KEY `option_id_UNIQUE` (`option_id`),
   KEY `tariff_id_idx` (`tariff_id`),
   CONSTRAINT `tariff_id` FOREIGN KEY (`tariff_id`) REFERENCES `tariff` (`tariff_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7153 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7206 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +189,7 @@ CREATE TABLE `option1` (
 
 LOCK TABLES `option1` WRITE;
 /*!40000 ALTER TABLE `option1` DISABLE KEYS */;
-INSERT INTO `option1` VALUES ('Answerphone',4,40,7100,2042),('Autumn calls',3,100,7102,2043),('Autumn sms',1,35,7103,2043),('Autumn mms',5,50,7104,2043),('International calls',10,100,7105,2043),('Answerphone',4,40,7106,2043),('Internet',200,100,7107,2043),('Winter calls',2,120,7108,2044),('Winter sms',1,80,7109,2044),('Winter mms',6,150,7110,2044),('Winter internet',250,100,7111,2044),('Internet',200,250,7112,2044),('Summer calls',2,50,7118,2042),('Summer mms',3,60,7120,2042),('Hot calls',1,60,7121,2042),('Hot sms',1,40,7122,2042),('Hot mms',3,50,7123,2042),('Internet',200,100,7124,2042),('Summer sms',1,30,7125,2042),('Spring calls',3,150,7150,2050),('Spring sms',1,100,7151,2050),('Spring mms',4,120,7152,2050);
+INSERT INTO `option1` VALUES ('Standart calls',3,0,1,1),('Standart sms',1,0,2,1),('Standart mms',4,0,3,1),('Answerphone',4,40,7100,2042),('Autumn calls',3,100,7102,2043),('Autumn sms',1,35,7103,2043),('Autumn mms',5,50,7104,2043),('International calls',10,100,7105,2043),('Answerphone',4,40,7106,2043),('Internet',200,100,7107,2043),('Winter calls',2,120,7108,2044),('Winter sms',1,80,7109,2044),('Winter mms',6,150,7110,2044),('Winter internet',250,100,7111,2044),('Internet',200,250,7112,2044),('Summer calls',2,50,7118,2042),('Summer mms',3,60,7120,2042),('Hot calls',1,60,7121,2042),('Hot sms',1,40,7122,2042),('Hot mms',3,50,7123,2042),('Internet',200,100,7124,2042),('Summer sms',1,30,7125,2042),('Spring calls',2,150,7200,2061),('Spring sms',1,100,7201,2061),('Spring mms',4,120,7202,2061),('Spring internet',150,200,7203,2061),('Internet',200,150,7204,2061),('Answerphone',5,50,7205,2061);
 /*!40000 ALTER TABLE `option1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +206,7 @@ CREATE TABLE `tariff` (
   `tariff_id` bigint(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`tariff_id`),
   UNIQUE KEY `tariff_id_UNIQUE` (`tariff_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2051 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2062 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `tariff` (
 
 LOCK TABLES `tariff` WRITE;
 /*!40000 ALTER TABLE `tariff` DISABLE KEYS */;
-INSERT INTO `tariff` VALUES ('Summer',200,2042),('Autumn',300,2043),('Winter',250,2044),('Spring',200,2050);
+INSERT INTO `tariff` VALUES ('Standard',0,1),('Summer',200,2042),('Autumn',300,2043),('Winter',250,2044),('Spring',150,2061);
 /*!40000 ALTER TABLE `tariff` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -228,4 +228,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-11-25 12:39:32
+-- Dump completed on 2014-12-03 15:14:42

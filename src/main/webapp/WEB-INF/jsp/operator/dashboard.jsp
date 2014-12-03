@@ -7,7 +7,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href=".././resources/css/style.css">
     <title>Operator's dashboard</title>
 </head>
 <body>

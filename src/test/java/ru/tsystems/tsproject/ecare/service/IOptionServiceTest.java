@@ -41,6 +41,7 @@ public class IOptionServiceTest {
         OP23 = optionService.saveOrUpdateOption(new Option(TR2, "tOption23", 2, 200));
         TR2.addOption(OP21);
         TR2.addOption(OP22);
+        TR2.addOption(OP23);
         TR2 = tariffService.saveOrUpdateTariff(TR2);
 
         TR3 = tariffService.saveOrUpdateTariff(new Tariff("tTariff3", 200));
