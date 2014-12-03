@@ -22,11 +22,13 @@ There are following kinds of entities:
 -	Contract (Telephone number, Tariff, Connected options for tariff).
 
 The application must provide the following functionality:
+
 For clients:
 -	Browse of the contract in a personal cabinet;
 -	Browse of all available tariffs and changing of tariff;
 -	Browse of all available options for tariff, adding new options, disable the existing ones;
 -	Lock / Unlock of number (if number is locked, you cannot change tariff and options; if number is not locked by client, he can’t unlock it);
+
 For employees:
 -	Conclusion of a contract with a new client: the choice of a new telephone number with the tariff and options. The phone number should be unique.
 -	Browse of all clients and contracts;
