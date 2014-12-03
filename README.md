@@ -2,7 +2,7 @@ eCare mobile operator. Author: Starostin Konstantin, 2014.
 
 ============
 
-Welcome to the implementation of the T-Systems Java School student's project eCare, simulating the application for the mobile operator and its clients.
+Welcome to the implementation of the T-Systems Java School student's project eCare, simulating the application for the mobile operator and his clients.
 The application is written on the Spring Framework, used a local MySql database with JPA and Maven.
 
 More information about project you can find in specification PDF file: https://github.com/selvindante/eCare-Spring/blob/master/eCare%20specification/ECare%20specification.pdf
