@@ -20,6 +20,7 @@ There are following kinds of entities:
 -	Option (Title, Price , Cost of connection);
 -	Client (Name, Last name, Birth date, Passport data, Address, List of contracts, E-mail, Password);
 -	Contract (Telephone number, Tariff, Connected options for tariff).
+
 The application must provide the following functionality:
 For clients:
 -	Browse of the contract in a personal cabinet;
@@ -35,6 +36,7 @@ For employees:
 -	Adding new tariffs, removing of old;
 -	Adding / removing option for tariff;
 -	Option management: some options may not be compatible with each other or could be added to certain options, employee adds and removes these rules.
+
 When performing operations with contracts before saving the changes on each page will be displayed basket, which displays the selected client's positions.
 
 ============
